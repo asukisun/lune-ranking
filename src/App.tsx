@@ -1,66 +1,7 @@
-import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import './components/Hello'
-import { Hello } from './components/Hello'
-import pika from './assets/images.jpeg';
-
-import './App.css'
+import { LuneTower } from './components/LuneTower/LuneTower'
 
 function App() {
-  const [count, setCount] = useState(3);
-
-  //初回だけ実行
-  useEffect(() => {
-    console.log("初回マウント完了");
-  }, []);
-
-  //countが変わるたびに実行
-  useEffect(() => {
-    console.log("countの値が変化した:", count);
-  }, [count]);
-
-  return (
-    <>
-      <h1 className="text-3xl font-bold underline text-blue-500">
-        カウンター
-      </h1>
-      <p>現在の値： {count} </p>
-      <button onClick={() => setCount(count + 2)}>
-        +2
-      </button>
-      <button onClick={() => setCount(count - 1)}>
-        -1
-      </button>
-      <div className="flex justify-center gap-4" >
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1 className='text-2xl font-bold underline text-red-200'>Vite + React + tailwindcss </h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          はろーEdit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      <>
-        <Hello />
-      </>
-      <div>
-        <img src={pika} className="pika react" alt="pika logo" />
-      </div>
-    </>
-  )
+  return <LuneTower />
 }
 
 export default App
