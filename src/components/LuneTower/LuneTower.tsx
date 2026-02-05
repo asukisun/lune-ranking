@@ -1,6 +1,7 @@
 import ltBg from '../../assets/lt-bg.png'
 import ltRankingBase from '../../assets/lt-ranking-base.png'
-import titlebanner from  '../../assets/title-base_genarated.png'
+import titlebanner from '../../assets/title-base_genarated.png'
+import backArrow from '../../assets/back-arrow.png'
 /** ルーンの塔 - メインコンテナ */
 export const LuneTower = () => {
   return (
@@ -9,15 +10,33 @@ export const LuneTower = () => {
       style={{ backgroundImage: `url(${ltBg})` }}
     >
       {/* ===== ヘッダーエリア（約16%） ===== */}
-      <header className="h-[16%] flex items-center px-4">
-        {/* タイトルボタン */}
-        <button
-          className="h-[80%] px-8 flex items-center justify-center bg-contain bg-center bg-no-repeat text-cmWhitePrimary font-dela-gothic text-shadow-title text-xl"
+      <header className="h-[16%] flex items-center px-4 gap-2">
+        {/* 戻るボタン */}
+
+        {/* タイトルバナー */}
+        <div
+          className="relative h-[80%] px-8 flex items-center justify-center bg-contain bg-center bg-no-repeat text-cmWhitePrimary font-dela-gothic text-shadow-title text-xl"
           style={{ backgroundImage: `url(${titlebanner})` }}
-          onClick={() => console.log('タイトルボタンクリック')}
         >
+          {/* 戻るボタン */}
+          <button
+            className="h-[60%] aspect-square flex items-center justify-center "
+            onClick={() => console.log('戻るボタンクリック')}
+          >
+            <img src={backArrow} alt="戻る" className="h-full w-full object-contain  relative -ml-10" />
+          </button>
+
+          {/* タイトルテキスト */}
           ルーンの塔
-        </button>
+
+          {/* ヘルプボタン（右上） */}
+          <button
+            className="absolute -top-0 -right-1 w-4 h-4 bg-[#2a2a5a] rounded-md flex items-center justify-center text-cmWhitePrimary text-sm font-bold border border-[#4a4a8a]"
+            onClick={() => console.log('ヘルプボタンクリック')}
+          >
+            ?
+          </button>
+        </div>
       </header>
 
       {/* ===== ランキングエリア全体（約84%）- lt-ranking-base.png背景 ===== */}
