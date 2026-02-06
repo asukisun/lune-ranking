@@ -61,7 +61,7 @@ export const LuneTower = () => {
 
           {/* ヘルプボタン（右上） */}
           <button
-            className="absolute -top-0 -right-1 w-4 h-4 bg-[#2a2a5a] rounded-md flex items-center justify-center text-cmWhitePrimary text-sm font-bold border border-[#4a4a8a]"
+            className="absolute -top-0 -right-1 w-4 h-4 bg-[#2a2a5a] rounded-md flex items-center justify-center text-cmWhitePrimary text-xs border border-[#4a4a8a]"
             onClick={() => console.log('ヘルプボタンクリック')}
           >
             ?
