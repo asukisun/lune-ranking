@@ -14,6 +14,185 @@ import ltMydataPanelBase from '../../assets/lt-mydata-panel-base.png'
 import ltMydataTitleBg from '../../assets/lt-mydata-title-bg.png'
 import ltFloorIcon from '../../assets/lt-floor-icon.png'
 import ltClockIcon from '../../assets/lt-clock-icon.png'
+import ltRankingUserPanelBase from '../../assets/lt-ranking-user-panel-base.png'
+// キャラアイコン関連
+import cmFireCharacterIconBase from '../../assets/cm-fire-character-icon-base.png'
+import cmFrontCharaIcon from '../../assets/cm-front-chara-icon.png'
+// 属性マーク（右上）- 仮にfireを使用
+import cmAttributeMarkFire from '../../assets/cm-fire-character-icon-base.png'
+// 攻撃タイプ（右中央）- 仮にfireを使用
+import cmAttackTypeMelee from '../../assets/cm-fire-character-icon-base.png'
+// キャラポジションタイプ（左下）- 仮にfireを使用
+import cmPositionFront from '../../assets/cm-fire-character-icon-base.png'
+// キャラタイプ（ポジション上）- 仮にfireを使用
+import cmCharacterTypeAttacker from '../../assets/cm-fire-character-icon-base.png'
+// レアリティマーク（左上）- 仮にfireを使用
+import cmRarityStar from '../../assets/cm-fire-character-icon-base.png'
+
+// ============================================
+// キャラクターアイコン関連の型定義
+// ============================================
+
+/** 属性タイプ */
+type AttributeType = 'fire' | 'water' | 'earth' | 'wind' | 'light' | 'dark'
+
+/** 攻撃タイプ */
+type AttackType = 'melee' | 'ranged' | 'magic'
+
+/** キャラポジションタイプ */
+type PositionType = 'front' | 'middle' | 'back'
+
+/** キャラタイプ */
+type CharacterType = 'attacker' | 'defender' | 'supporter' | 'healer'
+
+/** キャラクターアイコンのProps */
+type CharacterIconProps = {
+  /** キャラクター画像URL */
+  characterImage: string
+  /** 属性（背景とマークに影響） */
+  attribute: AttributeType
+  /** 攻撃タイプ */
+  attackType: AttackType
+  /** ポジションタイプ */
+  positionType: PositionType
+  /** キャラタイプ */
+  characterType: CharacterType
+  /** レアリティ（1-5、星の数に影響） */
+  rarity: number
+  /** レベル */
+  level: number
+}
+
+// ============================================
+// 属性別背景画像マッピング（将来的に差し替え可能）
+// ============================================
+const ATTRIBUTE_BG_MAP: Record<AttributeType, string> = {
+  fire: cmFireCharacterIconBase,
+  water: cmFireCharacterIconBase, // TODO: 差し替え
+  earth: cmFireCharacterIconBase,
+  wind: cmFireCharacterIconBase,
+  light: cmFireCharacterIconBase,
+  dark: cmFireCharacterIconBase,
+}
+
+/** 属性マーク画像マッピング */
+const ATTRIBUTE_MARK_MAP: Record<AttributeType, string> = {
+  fire: cmAttributeMarkFire,
+  water: cmAttributeMarkFire,
+  earth: cmAttributeMarkFire,
+  wind: cmAttributeMarkFire,
+  light: cmAttributeMarkFire,
+  dark: cmAttributeMarkFire,
+}
+
+/** 攻撃タイプ画像マッピング */
+const ATTACK_TYPE_MAP: Record<AttackType, string> = {
+  melee: cmAttackTypeMelee,
+  ranged: cmAttackTypeMelee,
+  magic: cmAttackTypeMelee,
+}
+
+/** ポジションタイプ画像マッピング */
+const POSITION_TYPE_MAP: Record<PositionType, string> = {
+  front: cmPositionFront,
+  middle: cmPositionFront,
+  back: cmPositionFront,
+}
+
+/** キャラタイプ画像マッピング */
+const CHARACTER_TYPE_MAP: Record<CharacterType, string> = {
+  attacker: cmCharacterTypeAttacker,
+  defender: cmCharacterTypeAttacker,
+  supporter: cmCharacterTypeAttacker,
+  healer: cmCharacterTypeAttacker,
+}
+
+// ============================================
+// CharacterIcon コンポーネント
+// ============================================
+/**
+ * キャラクターアイコンコンポーネント
+ * - 属性背景（下層）
+ * - キャラ画像（中層）
+ * - 各種オーバーレイ（上層）
+ *   - 属性マーク（右上）
+ *   - 攻撃タイプ（右中央）
+ *   - ポジションタイプ（左下）
+ *   - キャラタイプ（ポジション上）
+ *   - レアリティ星（左上、縦並び）
+ *   - レベル表示（下部中央）
+ */
+const CharacterIcon = ({
+  characterImage,
+  attribute,
+  attackType,
+  positionType,
+  characterType,
+  rarity,
+  level,
+}: CharacterIconProps) => {
+  return (
+    <div className="relative w-10 h-12 flex items-center justify-center">
+      {/* 属性背景（下層） */}
+      <div
+        className="absolute inset-0 bg-contain bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${ATTRIBUTE_BG_MAP[attribute]})` }}
+      />
+
+      {/* キャラ画像（中層） */}
+      <img
+        src={characterImage}
+        alt="キャラ"
+        className="relative z-10 w-8 h-8 object-contain"
+      />
+
+      {/* 属性マーク（右上） */}
+      <img
+        src={ATTRIBUTE_MARK_MAP[attribute]}
+        alt={attribute}
+        className="absolute top-0 right-0 w-3 h-3 z-20 object-contain"
+      />
+
+      {/* 攻撃タイプ（右中央） */}
+      <img
+        src={ATTACK_TYPE_MAP[attackType]}
+        alt={attackType}
+        className="absolute top-1/2 right-0 -translate-y-1/2 w-3 h-3 z-20 object-contain"
+      />
+
+      {/* キャラタイプ（左下のポジション上） */}
+      <img
+        src={CHARACTER_TYPE_MAP[characterType]}
+        alt={characterType}
+        className="absolute bottom-3 left-0 w-3 h-3 z-20 object-contain"
+      />
+
+      {/* ポジションタイプ（左下） */}
+      <img
+        src={POSITION_TYPE_MAP[positionType]}
+        alt={positionType}
+        className="absolute bottom-0 left-0 w-3 h-3 z-20 object-contain"
+      />
+
+      {/* レアリティ星（左上、縦並び） */}
+      <div className="absolute top-0 left-0 flex flex-col gap-px z-20">
+        {Array.from({ length: Math.min(rarity, 5) }).map((_, idx) => (
+          <img
+            key={idx}
+            src={cmRarityStar}
+            alt="★"
+            className="w-2 h-2 object-contain"
+          />
+        ))}
+      </div>
+
+      {/* レベル表示（下部中央） */}
+      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 text-[8px] text-cmWhitePrimary font-bold z-20 text-shadow-default">
+        Lv.{level}
+      </span>
+    </div>
+  )
+}
 
 /** タブの種類 */
 type TabType = 'world' | 'rival' | 'reward'
@@ -30,6 +209,53 @@ const SEASON_DATA: Record<SeasonType, string> = {
   season2: 'Season2 : 2026/06/01 ~ 2026/07/31',
   season3: 'Season3 : 2026/08/01 ~ 2026/09/30',
 }
+
+/** キャラクターデータ型 */
+type CharacterData = {
+  characterImage: string
+  attribute: AttributeType
+  attackType: AttackType
+  positionType: PositionType
+  characterType: CharacterType
+  rarity: number
+  level: number
+}
+
+/** ランキングユーザーデータ型 */
+type RankingUser = {
+  rank: number
+  name: string
+  floor: number
+  time: string
+  characters: CharacterData[]
+}
+
+/** キャラクターモックデータ生成ヘルパー */
+const generateMockCharacters = (): CharacterData[] => {
+  const attributes: AttributeType[] = ['fire', 'water', 'earth', 'wind', 'light', 'dark']
+  const attackTypes: AttackType[] = ['melee', 'ranged', 'magic']
+  const positionTypes: PositionType[] = ['front', 'middle', 'back']
+  const characterTypes: CharacterType[] = ['attacker', 'defender', 'supporter', 'healer']
+
+  return Array.from({ length: 7 }, (_, idx) => ({
+    characterImage: cmFrontCharaIcon,
+    attribute: attributes[idx % attributes.length],
+    attackType: attackTypes[idx % attackTypes.length],
+    positionType: positionTypes[idx % positionTypes.length],
+    characterType: characterTypes[idx % characterTypes.length],
+    rarity: (idx % 5) + 1, // 1-5のレアリティ
+    level: 50 + idx * 7, // 50, 57, 64, 71, 78, 85, 92
+  }))
+}
+
+/** ランキングモックデータ（30人分） */
+const MOCK_RANKING_DATA: RankingUser[] = Array.from({ length: 30 }, (_, i) => ({
+  rank: i + 1,
+  name: '最大7文字あああ',
+  floor: 999,
+  time: '9:59',
+  characters: generateMockCharacters(),
+}))
 
 /** ルーンの塔 - メインコンテナ */
 export const LuneTower = () => {
@@ -272,10 +498,74 @@ export const LuneTower = () => {
           </div>
 
           {/* 右カラム：ランキングリスト（スクロール可能） */}
-          <div className="flex-1 flex flex-col pl-2 overflow-hidden">
-            <span className="text-CmBasicText font-mplus-rounded text-shadow-default text-sm">
-              【右カラム】ランキングユーザーパネル × 10（スクロール可能）
-            </span>
+          <div className="flex-1 flex flex-col pl-2 pr-4 overflow-y-auto overflow-x-hidden gap-2 mq-story-scrollbar">
+            {MOCK_RANKING_DATA.map((user) => (
+              <div
+                key={user.rank}
+                className="flex items-center h-15 min-h-15 bg-cover bg-center bg-no-repeat px-2 gap-2 border-2 border-white"
+                style={{
+                  backgroundImage: `url(${ltRankingUserPanelBase})`,
+                  borderRadius: '12px 4px 12px 4px'  /* 左上緩やか 右上急 右下緩やか 左下急 */
+                }}
+              >
+                {/* 順位 */}
+                <div
+                  className={`w-8 h-full flex items-center justify-center font-bold text-cmWhitePrimary text-lg border-2 border-white -ml-2 -my-2 ${
+                    user.rank === 1 ? 'bg-yellow-400' :
+                    user.rank === 2 ? 'bg-blue-400' :
+                    user.rank === 3 ? 'bg-red-500' :
+                    'bg-[#AF8457]'
+                  }`}
+                  style={{ borderRadius: '12px 4px 12px 4px' }}
+                >
+                  {user.rank}
+                </div>
+
+                {/* プレイヤーアイコン */}
+                <div className="w-6 h-6 bg-white rounded flex items-center justify-center flex-shrink-0 self-start mt-1">
+                  <span className="text-xs text-CmBasicText">ICON</span>
+                </div>
+
+                {/* プレイヤー情報 */}
+                <div className="flex flex-col justify-center">
+                  <span className="text-CmBasicText font-mplus-rounded text-sm font-bold">
+                    {user.name}
+                  </span>
+                  <div className="flex items-center gap-3">
+                    {/* フロア */}
+                    <div className="flex items-center gap-1">
+                      <img src={ltFloorIcon} alt="フロア" className="h-5 w-auto" />
+                      <span className="text-CmBasicText font-mplus-rounded text-xs">
+                        {user.floor}
+                      </span>
+                    </div>
+                    {/* タイム */}
+                    <div className="flex items-center gap-1">
+                      <img src={ltClockIcon} alt="タイム" className="h-5 w-auto" />
+                      <span className="text-CmBasicText font-mplus-rounded text-xs">
+                        {user.time}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* キャラアイコン ×7 */}
+                <div className="flex-1 flex items-center justify-center gap-1">
+                  {user.characters.map((char, idx) => (
+                    <CharacterIcon
+                      key={idx}
+                      characterImage={char.characterImage}
+                      attribute={char.attribute}
+                      attackType={char.attackType}
+                      positionType={char.positionType}
+                      characterType={char.characterType}
+                      rarity={char.rarity}
+                      level={char.level}
+                    />
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </main>
