@@ -9,6 +9,11 @@ import ltRivalRankIcon from '../../assets/lt-rival-rank-icon-unselected.png'
 import ltRewardIcon from '../../assets/lt-reward-icon-unselected.png'
 import ltSeasonBase from '../../assets/lt-season-base.png'
 import redCircle from '../../assets/redcircle.png'
+import ltRankingTitleDecoration from '../../assets/lt-ranking-title-decoration.png'
+import ltMydataPanelBase from '../../assets/lt-mydata-panel-base.png'
+import ltMydataTitleBg from '../../assets/lt-mydata-title-bg.png'
+import ltFloorIcon from '../../assets/lt-floor-icon.png'
+import ltClockIcon from '../../assets/lt-clock-icon.png'
 
 /** タブの種類 */
 type TabType = 'world' | 'rival' | 'reward'
@@ -62,6 +67,7 @@ export const LuneTower = () => {
           {/* ヘルプボタン（右上） */}
           <button
             className="absolute -top-0 -right-1 w-4 h-4 bg-[#2a2a5a] rounded-md flex items-center justify-center text-cmWhitePrimary text-xs border border-[#4a4a8a]"
+            style={{ boxShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)' }}
             onClick={() => console.log('ヘルプボタンクリック')}
           >
             ?
@@ -87,6 +93,7 @@ export const LuneTower = () => {
               {/* ヘルプボタン（右上） */}
               <button
                 className="absolute -top-1 -right-4 w-4 h-4 bg-[#2a2a5a] rounded-md flex items-center justify-center text-cmWhitePrimary text-xs font-bold border border-[#4a4a8a]"
+                style={{ boxShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)' }}
                 onClick={() => console.log('ランキングヘルプクリック')}
               >
                 ?
@@ -158,7 +165,7 @@ export const LuneTower = () => {
                 <img
                   src={redCircle}
                   alt="通知"
-                  className="absolute -top-1 -right-1 w-3 h-3"
+                  className="absolute -top-1 -right-1 w-3 h-3 "
                 />
               </button>
             </div>
@@ -185,16 +192,83 @@ export const LuneTower = () => {
         {/* --- コンテンツエリア：左右2カラム構成 --- */}
         <div className="flex-1 flex overflow-hidden p-2 bg-cmModalBg/50 rounded-md border-2 border-white">
           {/* 左カラム：世界ランクタイトル + マイデータパネル */}
-          <div className="w-[22%] flex flex-col border-r border-black/10 pr-2">
-            <span className="text-CmBasicText font-mplus-rounded text-shadow-default text-xs">
-              【左カラム】
-            </span>
-            <span className="text-CmBasicText font-mplus-rounded text-shadow-default text-xs mt-1">
-              ・世界ランクタイトル
-            </span>
-            <span className="text-CmBasicText font-mplus-rounded text-shadow-default text-xs">
-              ・マイデータパネル
-            </span>
+          <div className="w-[22%] flex flex-col pr-2 gap-2">
+            {/* 世界ランクタイトル */}
+            <div
+              className="relative h-[25%] flex items-center justify-center bg-contain bg-center bg-no-repeat"
+              style={{ backgroundImage: `url(${ltRankingTitleDecoration})` }}
+            >
+              <span
+                className="text-cmWhitePrimary font-dela-gothic text-lg text-shadow-title"
+                style={{
+                  WebkitTextStroke: '1.5px var(--color-cmUnselectedTab)'
+                }}
+              >
+                世界ランク
+              </span>
+            </div>
+
+            {/* マイデータセクション（タイトルとパネルを上下に隣接） */}
+            <div className="flex-1 flex flex-col items-center">
+              {/* マイデータタイトル */}
+              <div
+                className="h-8 w-26 flex items-center justify-center bg-contain bg-center bg-no-repeat"
+                style={{ backgroundImage: `url(${ltMydataTitleBg})` }}
+              >
+                <span className="text-cmWhitePrimary font-mplus-rounded text-xs font-bold">
+                  マイデータ
+                </span>
+              </div>
+
+              {/* マイデータパネル（ベージュ部分） */}
+              <div
+                className="relative flex-1 flex flex-col bg-cover bg-center bg-no-repeat p-2 w-26"
+                style={{ backgroundImage: `url(${ltMydataPanelBase})` }}
+              >
+                {/* マイデータ 注釈ボタン（右上） */}
+                <button
+                  className="absolute top-1 right-1 w-4 h-4 bg-cmUnselectedTab rounded-md flex items-center justify-center text-cmWhitePrimary text-xs font-bold"
+                  style={{ boxShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)' }}
+                  onClick={() => console.log('マイデータ注釈クリック')}
+                >
+                  !
+                </button>
+
+                {/* プレイヤーアイコン（仮） */}
+                <div className="flex justify-center mb-2">
+                  <div className="w-12 h-12 bg-white rounded flex items-center justify-center">
+                    <span className="text-xs text-CmBasicText">ICON</span>
+                  </div>
+                </div>
+
+                {/* 順位 */}
+                <div className="text-center mb-2">
+                  <span className="text-CmBasicText font-mplus-rounded text-lg font-bold">
+                    10000位
+                  </span>
+                </div>
+
+                {/* フロア + タイム */}
+                <div className="flex items-center justify-center gap-4">
+                  {/* フロア */}
+                  <div className="flex items-center gap-1">
+                    <img src={ltFloorIcon} alt="フロア" className="h-4 w-auto" />
+                    <span className="text-CmBasicText font-mplus-rounded text-xs font-bold">
+                      999
+                    </span>
+                  </div>
+
+                  {/* タイム */}
+                  <div className="flex items-center gap-1">
+                    <img src={ltClockIcon} alt="タイム" className="h-4 w-auto" />
+                    <span className="text-CmBasicText font-mplus-rounded text-xs font-bold">
+                      5:00
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
           </div>
 
           {/* 右カラム：ランキングリスト（スクロール可能） */}
