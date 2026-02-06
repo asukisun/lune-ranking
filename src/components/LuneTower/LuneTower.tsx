@@ -66,7 +66,7 @@ export const LuneTower = () => {
 
           {/* ヘルプボタン（右上） */}
           <button
-            className="absolute -top-0 -right-1 w-4 h-4 bg-[#2a2a5a] rounded-md flex items-center justify-center text-cmWhitePrimary text-xs border border-[#4a4a8a]"
+            className="absolute -top-0 -right-1 w-4 h-4 bg-[#2a2a5a] rounded-md flex items-center justify-center text-cmWhitePrimary text-xs "
             style={{ boxShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)' }}
             onClick={() => console.log('ヘルプボタンクリック')}
           >
@@ -87,7 +87,7 @@ export const LuneTower = () => {
             {/* ランキングタイトル */}
             <div className="relative flex items-center gap-2">
               <img src={ltRankingYellowMark} alt="" className="h-6 w-auto" />
-              <span className="text-CmBasicText font-mochiy text-lg text-shadow-default">
+              <span className="text-cmPurple font-mochiy text-lg text-shadow-default ">
                 ランキング
               </span>
               {/* ヘルプボタン（右上） */}

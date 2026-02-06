@@ -574,7 +574,9 @@ body {
  --color-cmUnselectedTab: #6f4011;
  --color-cmUnselectedTabBorder: #3b3229;
  --color-cmBaseTertiary: #f6e6d9;
-}
+ /* Asuki追加 */
+ --color-cmPurple: #4f2dcc;
+ }
 
 
 :root {
