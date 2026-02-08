@@ -59,21 +59,21 @@ const generateMockCharacters = (): CharacterData[] => {
   const positionTypes: PositionType[] = ['front', 'middle', 'back']
   const characterTypes: CharacterType[] = ['attacker', 'tank', 'defender', 'supporter', 'healer']
 
-  return Array.from({ length: 7 }, (_, idx) => ({
+  return Array.from({ length: 8 }, (_, idx) => ({
     characterImage: cmMockCharacterImage, // TODO: 実際のキャラ画像に差し替え
     attribute: attributes[idx % attributes.length],
     attackType: attackTypes[idx % attackTypes.length],
     positionType: positionTypes[idx % positionTypes.length],
     characterType: characterTypes[idx % characterTypes.length],
     rarity: (idx % 5) + 1, // 1-5のレアリティ
-    level: 50 + idx * 7, // 50, 57, 64, 71, 78, 85, 92
+    level: 50 + idx * 8, // 50, 57, 64, 71, 78, 85, 92
   }))
 }
 
 /** ランキングモックデータ（30人分） */
 const MOCK_RANKING_DATA: RankingUser[] = Array.from({ length: 30 }, (_, i) => ({
   rank: i + 1,
-  name: '最大7文字あああ',
+  name: '最大7文字ああ',
   floor: 999,
   time: '9:59',
   characters: generateMockCharacters(),
@@ -240,7 +240,7 @@ export const LuneTower = () => {
         {/* --- コンテンツエリア：左右2カラム構成 --- */}
         <div className="flex-1 flex overflow-hidden p-2 bg-cmModalBg/50 rounded-md border-2 border-white">
           {/* 左カラム：世界ランクタイトル + マイデータパネル */}
-          <div className="w-[22%] flex flex-col pr-2 gap-2">
+          <div className="w-[16%] flex flex-col pr-2 gap-1">
             {/* 世界ランクタイトル */}
             <div
               className="relative h-[25%] flex items-center justify-center bg-contain bg-center bg-no-repeat"
@@ -371,19 +371,22 @@ export const LuneTower = () => {
                   </div>
                 </div>
 
-                {/* キャラアイコン ×7 */}
-                <div className="flex-1 flex items-center justify-center gap-1">
+                {/* キャラアイコン ×8（8個目は非表示、将来の拡張用） */}
+                {/* 8個目表示 の際は、className云々で記述したidx 7番オブジェクトhidden指定を除去する。*/}
+                <div className="flex-1 flex items-center gap-1 bg-cmBaseTertiary rounded-md p-1">
                   {user.characters.map((char, idx) => (
-                    <CharacterIcon
-                      key={idx}
-                      characterImage={char.characterImage}
-                      attribute={char.attribute}
-                      attackType={char.attackType}
-                      positionType={char.positionType}
-                      characterType={char.characterType}
-                      rarity={char.rarity}
-                      level={char.level}
-                    />
+                    <div key={idx} className={idx === 7 ? 'hidden' : ''}>
+                    {/* <div key={idx}> */}
+                      <CharacterIcon
+                        characterImage={char.characterImage}
+                        attribute={char.attribute}
+                        attackType={char.attackType}
+                        positionType={char.positionType}
+                        characterType={char.characterType}
+                        rarity={char.rarity}
+                        level={char.level}
+                      />
+                    </div>
                   ))}
                 </div>
               </div>
