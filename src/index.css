@@ -283,6 +283,19 @@ a img {
  .text-shadow-none {
    text-shadow: none;
  }
+
+ /* 文字 縁取り */
+ .text-stroke-white { 
+  -webkit-text-stroke-width: 0.1px;
+  -webkit-text-stroke-color: var(--color-cmWhitePrimary);
+ }
+
+ .text-stroke-blown {
+  -webkit-text-stroke: 2px #B27334;
+ }
+ .text-stroke-purple {
+  -webkit-text-stroke: 2px #65118E;
+ }
 }
 
 
@@ -607,6 +620,30 @@ body {
    #008cff 33.4%,
    #0051ff 61%
  );
+
+ --gradient-lanking-yellow: linear-gradient(
+   99deg,
+   #FFFF00 0%,
+   #F5D45D 100%
+ );
+
+ --gradient-lanking-blue: linear-gradient(
+   99deg,
+   #008cff 0%,
+   #4A94D6 50%,
+   #8A9CAE 100%
+ );
+ --gradient-lanking-red: linear-gradient(
+   135deg,
+   #EF4444 0%,
+   #991B1B 100%
+ );
+  --gradient-lanking-txt-3rd: linear-gradient(
+   245deg,
+   #EF4444 0%,
+   #991B1B 100%
+ );
+
 }
 
 

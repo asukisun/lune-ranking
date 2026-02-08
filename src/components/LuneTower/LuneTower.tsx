@@ -90,21 +90,24 @@ type RankStyle = {
 /** 順位別スタイル（順位表示部分） */
 const RANK_BADGE_STYLES: Record<1 | 2 | 3 | 'default', RankStyle> = {
   1: {
-    className: 'text-[#F4CE62]',
+    className: 'text-[#F4CE62] ' ,
     style: {
-      background: 'linear-gradient(135deg, #FFFF00 0%, #F5D45D 100%)', // 金色グラデーション
+      // background: 'linear-gradient(135deg, #FFFF00 0%, #F5D45D 100%)', // 金色グラデーション
+      background: 'var(--gradient-lanking-yellow)'
     },
   },
   2: {
     className: 'text-gray-400',
     style: {
-      background: 'linear-gradient(135deg, #48BFFF 0%, #8A9CAE 100%)', // 銀色グラデーション
+      // background: 'linear-gradient(135deg, #48BFFF 0%, #8A9CAE 100%)', // 銀色グラデーション
+      background: 'var(--gradient-lanking-blue)'
     },
   },
   3: {
-    className: 'text-[#7A403F]',
+    className: 'text-[#7A403F] ',
     style: {
-      background: 'linear-gradient(135deg, #EF4444 0%, #991B1B 100%)', // 赤グラデーション
+      // background: 'linear-gradient(135deg, #EF4444 0%, #991B1B 100%)', // 赤グラデーション
+      background: 'var(--gradient-lanking-red)', // 赤グラデーション
     },
   },
   default: {
@@ -113,38 +116,30 @@ const RANK_BADGE_STYLES: Record<1 | 2 | 3 | 'default', RankStyle> = {
   },
 }
 
-/** 順位別スタイル（プレイヤー名部分） */
+/** 順位別スタイル（プレイヤー名 部分） */
 const RANK_NAME_STYLES: Record<1 | 2 | 3 | 'default', RankStyle> = {
   1: {
-    className: 'text-[#B8860B] text-shadow-default',
+    className: 'text-[#B8860B] text-stroke-white',
     style: {
       // background: 'linear-gradient(180deg, #FFD700 0%, #B8860B 100%)',
       // WebkitBackgroundClip: 'text',
       // WebkitTextFillColor: 'transparent',
-      background: 'linear-gradient(180deg, #8B4513 0%, #5D2E0C 100%)',
-      WebkitBackgroundClip: 'text',
-      WebkitTextFillColor: 'transparent',
-      WebkitTextStroke: '1px var(--color-cmWhitePrimary)'
+      // background: 'linear-gradient(180deg, #8B4513 0%, #5D2E0C 100%)',
+      // WebkitBackgroundClip: 'text',
+      // WebkitTextFillColor: 'transparent',
+      // WebkitTextStroke: '1px var(--color-cmWhitePrimary)'
     },
   },
   2: {
-    className: 'text-gray-500 text-shadow-default',
+    className: 'text-gray-500 text-stroke-white',
     style: {},
   },
   3: {
-    className: 'text-[#7A403F] text-shadow-default',
-    style: {
-      // background: 'linear-gradient(180deg, #FFD700 0%, #B8860B 100%)',
-      // WebkitBackgroundClip: 'text',
-      // WebkitTextFillColor: 'transparent',
-      background: 'linear-gradient(215deg, #8B4513 0%, #5D2E0C 100%)',
-      WebkitBackgroundClip: 'text',
-      WebkitTextFillColor: 'transparent',
-      WebkitTextStroke: '1px var(--color-cmWhitePrimary)'
-    },
+    className: 'text-grad-cm-emphasis-red text-stroke-white',
+    style: {},
   },
   default: {
-    className: 'text-[#86541F] text-shadow-default',
+    className: 'text-grad-cm-emphasis-text-brown text-stroke-white ',
     style: {},
   },
 }
@@ -430,7 +425,7 @@ export const LuneTower = () => {
                 {/* プレイヤー情報 */}
                 <div className="flex flex-col justify-center">
                   <span
-                    className={`font-mochiy text-base font-bold text-shadow-lg/30 ${
+                    className={`font-mochiy text-base font-bold text-shadow-default ${
                       getRankStyle(user.rank, RANK_NAME_STYLES).className
                     }`}
                     style={getRankStyle(user.rank, RANK_NAME_STYLES).style}
