@@ -168,9 +168,9 @@ export const CharacterIcon = ({
             key={idx}
             src={cmRarityStar}
             alt="★"
-            className="w-2.5 h-2.5 object-contain "
+            className="w-3 h-3 object-contain "
             style={{
-              marginLeft: idx === 0 ? 0 : -11, // 2個目以降は重ねる（より密に）
+              marginLeft: idx === 0 ? 0 : -10, // 2個目以降は重ねる（より密に）
               transform: 'rotate(15deg)',
               filter: 'drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5))',
             }}
