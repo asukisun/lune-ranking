@@ -339,6 +339,9 @@ export const LuneTower = () => {
                     'bg-[#AF8457]'
                   }`}
                   style={{
+                    background: user.rank === 3 
+                      ? 'linear-gradient(135deg, #EF4444 0%, #991B1B 100%)' // 明るい赤→暗い赤
+                      : undefined,
                     borderRadius: '12px 4px 12px 4px',
                     WebkitTextStroke: '1px var(--color-cmWhitePrimary)'
                   }}
@@ -353,7 +356,20 @@ export const LuneTower = () => {
 
                 {/* プレイヤー情報 */}
                 <div className="flex flex-col justify-center">
-                  <span className="text-CmBasicText font-mplus-rounded text-sm font-bold">
+                  <span
+                    className={`"text-CmBasicText font-mochiy text-base font-bold text-shadow-lg/30" ${
+                    user.rank === 1 ? 'bg-yellow-400 text-[#F4CE62]' :
+                    user.rank === 2 ? 'bg-blue-400 text-gray-400' :
+                    user.rank === 3 ? 'bg-red-500 text-[#7A403F]' :
+                    'text-[#7A403F]'
+                  }`}
+                    // style={{
+                    //   WebkitTextStroke: '1px var(--color-cmWhitePrimary)',
+                    //   background: 'linear-gradient(180deg, #8B4513 0%, #5D2E0C 100%)',
+                    //   WebkitBackgroundClip: 'text',
+                    //   WebkitTextFillColor: 'transparent'
+                    // }}
+                  >
                     {user.name}
                   </span>
                   <div className="flex items-center gap-3">
