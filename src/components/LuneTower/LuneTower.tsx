@@ -135,7 +135,7 @@ export const LuneTower = () => {
             {/* ランキングタイトル */}
             <div className="relative flex items-center gap-2">
               <img src={ltRankingYellowMark} alt="" className="h-6 w-auto" />
-              <span className="text-cmPurple font-mochiy text-lg text-shadow-default ">
+              <span className="text-cmPurple font-dela-gothic text-lg text-shadow-default ">
                 ランキング
               </span>
               {/* ヘルプボタン（右上） */}
@@ -332,13 +332,16 @@ export const LuneTower = () => {
               >
                 {/* 順位 */}
                 <div
-                  className={`w-8 h-full flex items-center justify-center font-bold text-cmWhitePrimary text-lg border-2 border-white -ml-2 -my-2 ${
-                    user.rank === 1 ? 'bg-yellow-400' :
-                    user.rank === 2 ? 'bg-blue-400' :
-                    user.rank === 3 ? 'bg-red-500' :
+                  className={`w-6 h-full flex items-center justify-center font-dela-gothic font-bold text-[#885721] text-xl text-shadow-lg/30 border-2 border-white -ml-2 -my-2 ${
+                    user.rank === 1 ? 'bg-yellow-400 text-[#F4CE62]' :
+                    user.rank === 2 ? 'bg-blue-400 text-gray-400' :
+                    user.rank === 3 ? 'bg-red-500 text-[#7A403F]' :
                     'bg-[#AF8457]'
                   }`}
-                  style={{ borderRadius: '12px 4px 12px 4px' }}
+                  style={{
+                    borderRadius: '12px 4px 12px 4px',
+                    WebkitTextStroke: '1px var(--color-cmWhitePrimary)'
+                  }}
                 >
                   {user.rank}
                 </div>
