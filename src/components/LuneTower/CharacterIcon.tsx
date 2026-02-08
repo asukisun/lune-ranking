@@ -119,7 +119,7 @@ export const CharacterIcon = ({
   level,
 }: CharacterIconProps) => {
   return (
-    <div className="relative w-11 h-11 flex items-center justify-center ">
+    <div className="relative w-11 h-11 flex items-center justify-center context-menu ">
       {/* 属性背景（下層） */}
       <div
         className="absolute inset-0 bg-contain bg-center bg-no-repeat rounded-lg border-3 border-white"

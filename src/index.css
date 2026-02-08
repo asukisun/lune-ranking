@@ -296,7 +296,7 @@ a img {
  }
 
  .text-stroke-white-m { 
-  -webkit-text-stroke-width: 0.8px;
+  -webkit-text-stroke-width: 1.0px;
   -webkit-text-stroke-color: var(--color-cmWhitePrimary);
  }
 
@@ -308,7 +308,13 @@ a img {
   -webkit-text-stroke-width: 1.2px;
   -webkit-text-stroke-color: #65118E;
  }
+
+ .text-stroke-purple-sm{
+  -webkit-text-stroke-width: 0.4px;
+  -webkit-text-stroke-color: #65118E;
+ }
 }
+
 
 
 /* コンテキストメニューのアニメーション */

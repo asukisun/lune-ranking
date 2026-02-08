@@ -361,24 +361,24 @@ export const LuneTower = () => {
 
                 {/* 順位 */}
                 <div className="text-center mb-2">
-                  <span className="text-CmBasicText font-mplus-rounded text-lg font-bold">
-                    10000位
+                  <span className="text-yellow-700 font-mplus-rounded text-lg font-extrabold text-stroke-white-m text-shadow-default">
+                    10001位
                   </span>
                 </div>
 
                 {/* フロア + タイム */}
-                <div className="flex items-center justify-center gap-4">
+                <div className="flex items-center justify-center gap-1">
                   {/* フロア */}
                   <div className="flex items-center gap-1">
                     <img src={ltFloorIcon} alt="フロア" className="h-4 w-auto" />
-                    <span className="text-CmBasicText font-mplus-rounded text-xs font-bold">
+                    <span className="text-white text-CmWhitePrimary font-mplus-rounded text-lg font-extrabold text-stroke-purple text-shadow-default">
                       999
                     </span>
                   </div>
                   {/* タイム */}
-                  <div className="flex items-center gap-1">
+                  <div className="flex items-center gap-0">
                     <img src={ltClockIcon} alt="タイム" className="h-4 w-auto" />
-                    <span className="text-CmBasicText font-mplus-rounded text-xs font-bold">
+                    <span className="text-white text-CmBasicText font-mplus-rounded text-lg font-extrabold text-stroke-purple text-shadow-default">
                       5:00
                     </span>
                   </div>
@@ -403,7 +403,7 @@ export const LuneTower = () => {
               >
                 {/* 順位 */}
                 <div
-                  className={`w-5 h-full flex items-center justify-center font-dela-gothic font-bold text-xl text-shadow-lg/30 border-2 border-white -ml-2 -my-2 ${
+                  className={`w-5 h-full flex items-center justify-center font-dela-gothic font-bold text-xl text-shadow-lg/30 border-2 border-white -ml-2 -my-2 context-menu  ${
                     getRankStyle(user.rank, RANK_BADGE_STYLES).className
                   }`}
                   style={{
@@ -416,7 +416,7 @@ export const LuneTower = () => {
                 </div>
 
                 {/* プレイヤーアイコン */}
-                <div className="w-6 h-6 bg-white rounded flex items-center justify-center flex-shrink-0 self-start mt-3">
+                <div className="w-6 h-6 bg-white rounded flex items-center justify-center flex-shrink-0 self-start mt-3 context-menu ">
                   <span className="text-xs text-CmBasicText">ICON</span>
                 </div>
 
@@ -433,15 +433,15 @@ export const LuneTower = () => {
                   <div className="flex items-center gap-1">
                     {/* フロア */}
                     <div className="flex items-center gap-1">
-                      <img src={ltFloorIcon} alt="フロア" className="h-4 w-auto" />
-                      <span className="text-white text-[15px] font-mplus-rounded font-extrabold text-xs text-stroke-purple">
+                      <img src={ltFloorIcon} alt="フロア" className="h-4 w-auto " />
+                      <span className="text-white text-[15px] font-mplus-rounded font-extrabold text-xs text-stroke-purple text-shadow-default">
                         {user.floor}
                       </span>
                     </div>
                     {/* タイム */}
                     <div className="flex items-center gap-1">
                       <img src={ltClockIcon} alt="タイム" className="h-4 w-auto" />
-                      <span className="text-white text-[15px] font-mplus-rounded font-extrabold text-xs text-stroke-purple">
+                      <span className="text-white text-[15px] font-mplus-rounded font-extrabold text-xs text-stroke-purple text-shadow-default">
                         {user.time}
                       </span>
                     </div>
@@ -450,7 +450,7 @@ export const LuneTower = () => {
 
                 {/* キャラアイコン ×8（8個目は非表示、将来の拡張用） */}
                 {/* 8個目表示 の際は、className云々で記述したidx 7番オブジェクトhidden指定を除去する。*/}
-                <div className="flex-1 flex items-center gap-1 bg-cmBaseTertiary rounded-md p-1">
+                <div className="flex-1 flex items-center gap-1 bg-cmBaseTertiary rounded-md p-1 ">
                   {user.characters.map((char, idx) => (
                     <div key={idx} className={idx === 7 ? 'hidden' : ''}>
                     {/* <div key={idx}> */}
