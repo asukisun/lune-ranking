@@ -304,11 +304,13 @@ export const LuneTower = () => {
 
         {/* --- コンテンツエリア：左右2カラム構成 --- */}
         <div className="flex-1 flex overflow-hidden p-2 bg-cmModalBg/50 rounded-md border-2 border-white">
-          {/* 左カラム：世界ランクタイトル + マイデータパネル */}
-          <div className="w-[16%] flex flex-col pr-2 gap-1">
-            {/* 世界ランクタイトル */}
+
+          {/* ========== 左カラム：世界ランク + マイデータ ========== */}
+          <div className="w-[16%] flex flex-col items-center justify-center pr-0 gap-1">
+
+            {/* --- 世界ランクタイトル --- */}
             <div
-              className="relative h-[25%] flex items-center justify-center bg-contain bg-center bg-no-repeat"
+              className="relative w-full h-[25%] flex items-center justify-center bg-contain bg-center bg-no-repeat"
               style={{ backgroundImage: `url(${ltRankingTitleDecoration})` }}
             >
               <span
@@ -321,27 +323,30 @@ export const LuneTower = () => {
               </span>
             </div>
 
-            {/* マイデータセクション（タイトルとパネルを上下に隣接） */}
-            <div className="flex-1 flex flex-col items-center">
+            {/* --- マイデータセクション --- */}
+            <div className="flex-1 flex flex-col items-center w-full">
+
               {/* マイデータタイトル */}
               <div
-                className="h-8 w-26 flex items-center justify-center bg-contain bg-center bg-no-repeat"
+                className="h-8 w-26 flex items-center justify-center bg-contain bg-center bg-no-repeat rounded-md context-menu"
                 style={{ backgroundImage: `url(${ltMydataTitleBg})` }}
               >
-                <span className="text-cmWhitePrimary font-mplus-rounded text-xs font-bold">
+                <span className="text-cmWhitePrimary text-[13px] font-mplus-rounded text-xs font-extrabold text-stroke-brown ">
                   マイデータ
                 </span>
               </div>
 
               {/* マイデータパネル（ベージュ部分） */}
               <div
-                className="relative flex-1 flex flex-col bg-cover bg-center bg-no-repeat p-2 w-26"
-                style={{ backgroundImage: `url(${ltMydataPanelBase})` }}
+                className="relative flex-1 flex flex-col bg-cover bg-center bg-no-repeat p-2 w-26 rounded-md border-2 border-white context-menu"
+                style={{
+                  backgroundImage: `url(${ltMydataPanelBase})`
+                }}
               >
-                {/* マイデータ 注釈ボタン（右上） */}
+                {/* 注釈ボタン（右上） */}
                 <button
-                  className="absolute top-1 right-1 w-4 h-4 bg-cmUnselectedTab rounded-md flex items-center justify-center text-cmWhitePrimary text-xs font-bold"
-                  style={{ boxShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)' }}
+                  className="absolute top-1 right-1 w-4 h-4 bg-cmUnselectedTab rounded-md flex items-center justify-center text-cmWhitePrimary text-xs font-bold context-menu"
+                  // style={{ boxShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)' }}
                   onClick={() => console.log('マイデータ注釈クリック')}
                 >
                   !
@@ -349,7 +354,7 @@ export const LuneTower = () => {
 
                 {/* プレイヤーアイコン（仮） */}
                 <div className="flex justify-center mb-2">
-                  <div className="w-12 h-12 bg-white rounded flex items-center justify-center">
+                  <div className="w-12 h-12 bg-white rounded flex items-center justify-center context-menu">
                     <span className="text-xs text-CmBasicText">ICON</span>
                   </div>
                 </div>
@@ -366,11 +371,10 @@ export const LuneTower = () => {
                   {/* フロア */}
                   <div className="flex items-center gap-1">
                     <img src={ltFloorIcon} alt="フロア" className="h-4 w-auto" />
-                    <span className="text-CmBasicText font-mplus-rounded text-xs font-bold ">
+                    <span className="text-CmBasicText font-mplus-rounded text-xs font-bold">
                       999
                     </span>
                   </div>
-
                   {/* タイム */}
                   <div className="flex items-center gap-1">
                     <img src={ltClockIcon} alt="タイム" className="h-4 w-auto" />
@@ -382,14 +386,16 @@ export const LuneTower = () => {
 
               </div>
             </div>
+
           </div>
+          {/* ========== /左カラム ここまで ========== */}
 
           {/* 右カラム：ランキングリスト（スクロール可能） */}
-          <div className="flex-1 flex flex-col pl-2 pr-4 overflow-y-auto overflow-x-hidden gap-2 mq-story-scrollbar">
+          <div className="flex-1 flex flex-col pl-2 pr-4 overflow-y-auto overflow-x-hidden gap-2 mq-story-scrollbar ">
             {MOCK_RANKING_DATA.map((user) => (
               <div
                 key={user.rank}
-                className="flex items-center h-15 min-h-15 bg-cover bg-center bg-no-repeat px-2 gap-2 border-2 border-white"
+                className="flex items-center h-15 min-h-15 bg-cover bg-center bg-no-repeat px-2 gap-2 border-2 border-white context-menu "
                 style={{
                   backgroundImage: `url(${ltRankingUserPanelBase})`,
                   borderRadius: '12px 4px 12px 4px'  /* 左上緩やか 右上急 右下緩やか 左下急 */
