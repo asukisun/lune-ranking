@@ -261,7 +261,7 @@ a img {
  }
 }
 
-
+/* MPLUSRounded1c-ExtraBold.ttf */
 @layer utilities {
  .font-mplus-rounded {
    font-family: "M Plus Rounded", sans-serif;
@@ -304,7 +304,8 @@ a img {
   -webkit-text-stroke: 2px #B27334;
  }
  .text-stroke-purple {
-  -webkit-text-stroke: 2px #65118E;
+  -webkit-text-stroke-width: 1.2px;
+  -webkit-text-stroke-color: #65118E;
  }
 }
 

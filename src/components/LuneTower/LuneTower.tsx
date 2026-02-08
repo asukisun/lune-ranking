@@ -366,7 +366,7 @@ export const LuneTower = () => {
                   {/* フロア */}
                   <div className="flex items-center gap-1">
                     <img src={ltFloorIcon} alt="フロア" className="h-4 w-auto" />
-                    <span className="text-CmBasicText font-mplus-rounded text-xs font-bold">
+                    <span className="text-CmBasicText font-mplus-rounded text-xs font-bold ">
                       999
                     </span>
                   </div>
@@ -397,7 +397,7 @@ export const LuneTower = () => {
               >
                 {/* 順位 */}
                 <div
-                  className={`w-6 h-full flex items-center justify-center font-dela-gothic font-bold text-xl text-shadow-lg/30 border-2 border-white -ml-2 -my-2 ${
+                  className={`w-5 h-full flex items-center justify-center font-dela-gothic font-bold text-xl text-shadow-lg/30 border-2 border-white -ml-2 -my-2 ${
                     getRankStyle(user.rank, RANK_BADGE_STYLES).className
                   }`}
                   style={{
@@ -410,12 +410,12 @@ export const LuneTower = () => {
                 </div>
 
                 {/* プレイヤーアイコン */}
-                <div className="w-6 h-6 bg-white rounded flex items-center justify-center flex-shrink-0 self-start mt-1">
+                <div className="w-6 h-6 bg-white rounded flex items-center justify-center flex-shrink-0 self-start mt-3">
                   <span className="text-xs text-CmBasicText">ICON</span>
                 </div>
 
                 {/* プレイヤー情報 */}
-                <div className="flex flex-col justify-center">
+                <div className="flex flex-col justify-center gap-1">
                   <span
                     className={`font-mochiy text-base font-bold text-drop-shadow ${
                       getRankStyle(user.rank, RANK_NAME_STYLES).className
@@ -424,18 +424,18 @@ export const LuneTower = () => {
                   >
                     {user.name}
                   </span>
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-1">
                     {/* フロア */}
                     <div className="flex items-center gap-1">
-                      <img src={ltFloorIcon} alt="フロア" className="h-5 w-auto" />
-                      <span className="text-CmBasicText font-mplus-rounded text-xs">
+                      <img src={ltFloorIcon} alt="フロア" className="h-4 w-auto" />
+                      <span className="text-white text-[15px] font-mplus-rounded font-extrabold text-xs text-stroke-purple">
                         {user.floor}
                       </span>
                     </div>
                     {/* タイム */}
                     <div className="flex items-center gap-1">
-                      <img src={ltClockIcon} alt="タイム" className="h-5 w-auto" />
-                      <span className="text-CmBasicText font-mplus-rounded text-xs">
+                      <img src={ltClockIcon} alt="タイム" className="h-4 w-auto" />
+                      <span className="text-white text-[15px] font-mplus-rounded font-extrabold text-xs text-stroke-purple">
                         {user.time}
                       </span>
                     </div>
