@@ -79,6 +79,84 @@ const MOCK_RANKING_DATA: RankingUser[] = Array.from({ length: 30 }, (_, i) => ({
   characters: generateMockCharacters(),
 }))
 
+// ============================================
+// 順位別スタイル定義
+// ============================================
+type RankStyle = {
+  className: string
+  style: React.CSSProperties
+}
+
+/** 順位別スタイル（順位表示部分） */
+const RANK_BADGE_STYLES: Record<1 | 2 | 3 | 'default', RankStyle> = {
+  1: {
+    className: 'text-[#F4CE62]',
+    style: {
+      background: 'linear-gradient(135deg, #FFFF00 0%, #F5D45D 100%)', // 金色グラデーション
+    },
+  },
+  2: {
+    className: 'text-gray-400',
+    style: {
+      background: 'linear-gradient(135deg, #48BFFF 0%, #8A9CAE 100%)', // 銀色グラデーション
+    },
+  },
+  3: {
+    className: 'text-[#7A403F]',
+    style: {
+      background: 'linear-gradient(135deg, #EF4444 0%, #991B1B 100%)', // 赤グラデーション
+    },
+  },
+  default: {
+    className: 'bg-[#AF8457]',
+    style: {},
+  },
+}
+
+/** 順位別スタイル（プレイヤー名部分） */
+const RANK_NAME_STYLES: Record<1 | 2 | 3 | 'default', RankStyle> = {
+  1: {
+    className: 'text-[#B8860B] text-shadow-default',
+    style: {
+      // background: 'linear-gradient(180deg, #FFD700 0%, #B8860B 100%)',
+      // WebkitBackgroundClip: 'text',
+      // WebkitTextFillColor: 'transparent',
+      background: 'linear-gradient(180deg, #8B4513 0%, #5D2E0C 100%)',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      WebkitTextStroke: '1px var(--color-cmWhitePrimary)'
+    },
+  },
+  2: {
+    className: 'text-gray-500 text-shadow-default',
+    style: {},
+  },
+  3: {
+    className: 'text-[#7A403F] text-shadow-default',
+    style: {
+      // background: 'linear-gradient(180deg, #FFD700 0%, #B8860B 100%)',
+      // WebkitBackgroundClip: 'text',
+      // WebkitTextFillColor: 'transparent',
+      background: 'linear-gradient(215deg, #8B4513 0%, #5D2E0C 100%)',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      WebkitTextStroke: '1px var(--color-cmWhitePrimary)'
+    },
+  },
+  default: {
+    className: 'text-[#86541F] text-shadow-default',
+    style: {},
+  },
+}
+
+/** 順位からスタイルを取得するヘルパー */
+const getRankStyle = (rank: number, styles: Record<1 | 2 | 3 | 'default', RankStyle>): RankStyle => {
+  if (rank === 1) return styles[1]
+  if (rank === 2) return styles[2]
+  if (rank === 3) return styles[3]
+  return styles.default
+}
+
 /** ルーンの塔 - メインコンテナ */
 export const LuneTower = () => {
   // タブのstate管理（将来のAPI/DB連携用）
@@ -332,18 +410,13 @@ export const LuneTower = () => {
               >
                 {/* 順位 */}
                 <div
-                  className={`w-6 h-full flex items-center justify-center font-dela-gothic font-bold text-[#885721] text-xl text-shadow-lg/30 border-2 border-white -ml-2 -my-2 ${
-                    user.rank === 1 ? 'bg-yellow-400 text-[#F4CE62]' :
-                    user.rank === 2 ? 'bg-blue-400 text-gray-400' :
-                    user.rank === 3 ? 'bg-red-500 text-[#7A403F]' :
-                    'bg-[#AF8457]'
+                  className={`w-6 h-full flex items-center justify-center font-dela-gothic font-bold text-xl text-shadow-lg/30 border-2 border-white -ml-2 -my-2 ${
+                    getRankStyle(user.rank, RANK_BADGE_STYLES).className
                   }`}
                   style={{
-                    background: user.rank === 3 
-                      ? 'linear-gradient(135deg, #EF4444 0%, #991B1B 100%)' // 明るい赤→暗い赤
-                      : undefined,
+                    ...getRankStyle(user.rank, RANK_BADGE_STYLES).style,
                     borderRadius: '12px 4px 12px 4px',
-                    WebkitTextStroke: '1px var(--color-cmWhitePrimary)'
+                    WebkitTextStroke: '1px var(--color-cmWhitePrimary)',
                   }}
                 >
                   {user.rank}
@@ -357,18 +430,10 @@ export const LuneTower = () => {
                 {/* プレイヤー情報 */}
                 <div className="flex flex-col justify-center">
                   <span
-                    className={`"text-CmBasicText font-mochiy text-base font-bold text-shadow-lg/30" ${
-                    user.rank === 1 ? 'bg-yellow-400 text-[#F4CE62]' :
-                    user.rank === 2 ? 'bg-blue-400 text-gray-400' :
-                    user.rank === 3 ? 'bg-red-500 text-[#7A403F]' :
-                    'text-[#7A403F]'
-                  }`}
-                    // style={{
-                    //   WebkitTextStroke: '1px var(--color-cmWhitePrimary)',
-                    //   background: 'linear-gradient(180deg, #8B4513 0%, #5D2E0C 100%)',
-                    //   WebkitBackgroundClip: 'text',
-                    //   WebkitTextFillColor: 'transparent'
-                    // }}
+                    className={`font-mochiy text-base font-bold text-shadow-lg/30 ${
+                      getRankStyle(user.rank, RANK_NAME_STYLES).className
+                    }`}
+                    style={getRankStyle(user.rank, RANK_NAME_STYLES).style}
                   >
                     {user.name}
                   </span>
