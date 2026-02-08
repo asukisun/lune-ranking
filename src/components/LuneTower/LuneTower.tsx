@@ -119,16 +119,8 @@ const RANK_BADGE_STYLES: Record<1 | 2 | 3 | 'default', RankStyle> = {
 /** 順位別スタイル（プレイヤー名 部分） */
 const RANK_NAME_STYLES: Record<1 | 2 | 3 | 'default', RankStyle> = {
   1: {
-    className: 'text-[#B8860B] text-stroke-white',
-    style: {
-      // background: 'linear-gradient(180deg, #FFD700 0%, #B8860B 100%)',
-      // WebkitBackgroundClip: 'text',
-      // WebkitTextFillColor: 'transparent',
-      // background: 'linear-gradient(180deg, #8B4513 0%, #5D2E0C 100%)',
-      // WebkitBackgroundClip: 'text',
-      // WebkitTextFillColor: 'transparent',
-      // WebkitTextStroke: '1px var(--color-cmWhitePrimary)'
-    },
+    className: 'text-grad-lanking-name-yellow text-stroke-white',
+    style: {},
   },
   2: {
     className: 'text-gray-500 text-stroke-white',
@@ -425,7 +417,7 @@ export const LuneTower = () => {
                 {/* プレイヤー情報 */}
                 <div className="flex flex-col justify-center">
                   <span
-                    className={`font-mochiy text-base font-bold text-shadow-default ${
+                    className={`font-mochiy text-base font-bold text-drop-shadow ${
                       getRankStyle(user.rank, RANK_NAME_STYLES).className
                     }`}
                     style={getRankStyle(user.rank, RANK_NAME_STYLES).style}

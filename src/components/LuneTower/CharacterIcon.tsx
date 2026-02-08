@@ -180,7 +180,7 @@ export const CharacterIcon = ({
 
       {/* レベル表示（下部右寄せ） */}
       {/* <span className="absolute bottom-0 right-0 text-[10px] text-orange-400 z-20 text-stroke [-webkit-text-stroke:1px_white] text-shadow-default"> */}
-      <span className="absolute bottom-0 right-0 text-[14px] font-mplus-rounded font-bold text-stroke [-webkit-text-stroke:1px_white] text-orange-400 z-20 text-shadow-default">
+      <span className="absolute bottom-0 right-0 text-[14px] font-mplus-rounded font-bold text-stroke-white text-orange-400 z-20 text-shadow-default">
         Lv.{level}
       </span>
     </div>

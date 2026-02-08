@@ -284,9 +284,19 @@ a img {
    text-shadow: none;
  }
 
+ /* drop shadow */
+ .text-drop-shadow {
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+ }
+
  /* 文字 縁取り */
  .text-stroke-white { 
-  -webkit-text-stroke-width: 0.1px;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: var(--color-cmWhitePrimary);
+ }
+
+ .text-stroke-white-m { 
+  -webkit-text-stroke-width: 0.8px;
   -webkit-text-stroke-color: var(--color-cmWhitePrimary);
  }
 
@@ -627,6 +637,13 @@ body {
    #F5D45D 100%
  );
 
+  --gradient-lanking-name-yellow: linear-gradient(
+   180deg,
+   #FFFF00 0%,
+   #EA9353 100%
+ );
+
+
  --gradient-lanking-blue: linear-gradient(
    99deg,
    #008cff 0%,
@@ -667,6 +684,29 @@ body {
    background-clip: text;
    color: transparent;
  }
+
+ .text-grad-lanking-yellow {
+  background: var(--gradient-lanking-yellow);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-grad-lanking-name-yellow {
+  background: var(--gradient-lanking-name-yellow);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
+
+ .text-grad-lanking-blue {
+  background: var(--gradient-lanking-blue);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 
 
  /* 背景用 */
