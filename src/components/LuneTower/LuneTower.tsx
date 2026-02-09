@@ -198,14 +198,14 @@ export const LuneTower = () => {
           {/* 上段：「ランキング」タイトル + シーズン選択 */}
           <div className="flex items-center justify-between mb-2">
             {/* ランキングタイトル */}
-            <div className="relative flex items-center gap-2">
-              <img src={ltRankingYellowMark} alt="" className="h-6 w-auto" />
-              <span className="text-cmPurple font-dela-gothic text-lg text-shadow-default ">
+            <div className="relative flex items-center gap-2 border-2 border-white rounded-sm bg-cmModalBg/50 h-5 ph-3">
+              <img src={ltRankingYellowMark} alt="" className="h-8 w-auto " />
+              <span className="text-cmPurple font-dela-gothic text-2xl text-stroke-white-m text-shadow-default ">
                 ランキング
               </span>
               {/* ヘルプボタン（右上） */}
               <button
-                className="absolute -top-1 -right-4 w-4 h-4 bg-[#2a2a5a] rounded-md flex items-center justify-center text-cmWhitePrimary text-xs font-bold border border-[#4a4a8a]"
+                className="absolute -top-2 -right-3 w-2.5 h-2.5 bg-cmUnselectedTabBorder rounded-xs flex items-center justify-center text-cmWhitePrimary text-xs border border-black"
                 style={{ boxShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)' }}
                 onClick={() => console.log('ランキングヘルプクリック')}
               >
@@ -234,12 +234,12 @@ export const LuneTower = () => {
           </div>
 
           {/* 下段：タブ3つ + ページネーション */}
-          <div className="flex items-center justify-between font-mplus-rounded text-sm font-bold text-cmWhitePrimary text-shadow-default">
+          <div className="flex items-center justify-between font-mplus-rounded text-sm font-bold text-cmWhitePrimary text-shadow-default ">
             {/* タブ3つ */}
             <div className="flex items-center gap-2 ">
               {/* 世界ランクタブ */}
               <button
-                className={`flex items-center gap-1 px-4 py-1 rounded-xs text-cmWhitePrimary text-shadow-default border-2 context-menu ${
+                className={`flex items-center gap-1 px-4 py-1 h-6 rounded-xs text-cmWhitePrimary text-shadow-default border-2 context-menu ${
                   activeTab === 'world'
                     ? 'bg-cmSelectedTab border-CmBasicText border-white '
                     : 'bg-cmUnselectedTab border-CmBasicText/50 border-black '
@@ -252,7 +252,7 @@ export const LuneTower = () => {
 
               {/* ライバルランクタブ */}
               <button
-                className={`flex items-center gap-1 px-4 py-1 rounded-xs border-2 context-menu ${
+                className={`flex items-center gap-1 px-4 py-1 h-6 rounded-xs border-2 context-menu ${
                   activeTab === 'rival'
                     ? 'bg-cmSelectedTab border-CmBasicText border-white '
                     : 'bg-cmUnselectedTab border-CmBasicText/50 border-black '
@@ -265,7 +265,7 @@ export const LuneTower = () => {
 
               {/* 報酬確認タブ */}
               <button
-                className={`relative flex items-center gap-1 px-4 py-1 rounded-xs border-2 ${
+                className={`relative flex items-center gap-1 px-4 py-1 h-6 rounded-xs border-2 ${
                   activeTab === 'reward'
                     ? 'bg-cmSelectedTab border-CmBasicText border-white '
                     : 'bg-cmUnselectedTab border-CmBasicText/50 border-black '
@@ -288,7 +288,7 @@ export const LuneTower = () => {
               {(['1-30', '31-60', '61-100'] as PageRange[]).map((range) => (
                 <button
                   key={range}
-                  className={`px-3 py-1 rounded border-2 text-shadow-default context-menu ${
+                  className={`px-3 py-1 h-6 rounded border-2 text-shadow-default context-menu ${
                     activePage === range
                       ? 'bg-cmSelectedTab border-CmBasicText border-white '
                       : 'bg-cmUnselectedTab border-CmBasicText/50 border-black '
@@ -348,7 +348,7 @@ export const LuneTower = () => {
               >
                 {/* 注釈ボタン（右上） */}
                 <button
-                  className="absolute top-1 right-1 w-4 h-4 bg-cmUnselectedTab rounded-md flex items-center justify-center text-cmWhitePrimary text-xs font-bold context-menu"
+                  className="absolute top-1 right-1 w-3 h-3 bg-cmUnselectedTab rounded-xs flex items-center justify-center text-cmWhitePrimary text-xs context-menu"
                   // style={{ boxShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)' }}
                   onClick={() => console.log('マイデータ注釈クリック')}
                 >
