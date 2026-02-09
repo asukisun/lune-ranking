@@ -314,7 +314,7 @@ export const LuneTower = () => {
               style={{ backgroundImage: `url(${ltRankingTitleDecoration})` }}
             >
               <span
-                className="text-cmWhitePrimary font-dela-gothic text-lg text-shadow-title"
+                className="text-cmWhitePrimary font-mplus-rounded text-xl text-shadow-title font-extrabold text-stroke-brown "
                 style={{
                   WebkitTextStroke: '1.5px var(--color-cmUnselectedTab)'
                 }}
@@ -331,7 +331,7 @@ export const LuneTower = () => {
                 className="h-8 w-26 flex items-center justify-center bg-contain bg-center bg-no-repeat rounded-md context-menu"
                 style={{ backgroundImage: `url(${ltMydataTitleBg})` }}
               >
-                <span className="text-cmWhitePrimary text-[13px] font-mplus-rounded text-xs font-extrabold text-stroke-brown ">
+                <span className="text-cmWhitePrimary text-[13px] font-mplus-rounded font-extrabold text-stroke-brown ">
                   マイデータ
                 </span>
               </div>
