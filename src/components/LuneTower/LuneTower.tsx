@@ -234,46 +234,46 @@ export const LuneTower = () => {
           </div>
 
           {/* 下段：タブ3つ + ページネーション */}
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between font-mplus-rounded text-sm font-bold text-cmWhitePrimary text-shadow-default">
             {/* タブ3つ */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 ">
               {/* 世界ランクタブ */}
               <button
-                className={`flex items-center gap-1 px-4 py-1 rounded-t-md border-2 ${
+                className={`flex items-center gap-1 px-4 py-1 rounded-xs text-cmWhitePrimary text-shadow-default border-2 context-menu ${
                   activeTab === 'world'
-                    ? 'bg-cmSelectedTab border-cmSelectedTab text-cmWhitePrimary'
-                    : 'bg-cmUnselectedTab border-cmUnselectedTabBorder text-cmWhitePrimary/80'
+                    ? 'bg-cmSelectedTab border-CmBasicText border-white '
+                    : 'bg-cmUnselectedTab border-CmBasicText/50 border-black '
                 }`}
                 onClick={() => setActiveTab('world')}
               >
                 <img src={ltWorldRankIcon} alt="" className="h-4 w-auto" />
-                <span className="font-mplus-rounded text-sm font-bold">世界ランク</span>
+                <span className="">世界ランク</span>
               </button>
 
               {/* ライバルランクタブ */}
               <button
-                className={`flex items-center gap-1 px-4 py-1 rounded-t-md border-2 ${
+                className={`flex items-center gap-1 px-4 py-1 rounded-xs border-2 context-menu ${
                   activeTab === 'rival'
-                    ? 'bg-cmSelectedTab border-cmSelectedTab text-cmWhitePrimary'
-                    : 'bg-cmUnselectedTab border-cmUnselectedTabBorder text-cmWhitePrimary/80'
+                    ? 'bg-cmSelectedTab border-CmBasicText border-white '
+                    : 'bg-cmUnselectedTab border-CmBasicText/50 border-black '
                 }`}
                 onClick={() => setActiveTab('rival')}
               >
                 <img src={ltRivalRankIcon} alt="" className="h-4 w-auto" />
-                <span className="font-mplus-rounded text-sm font-bold">ライバルランク</span>
+                <span className="">ライバルランク</span>
               </button>
 
               {/* 報酬確認タブ */}
               <button
-                className={`relative flex items-center gap-1 px-4 py-1 rounded-t-md border-2 ${
+                className={`relative flex items-center gap-1 px-4 py-1 rounded-xs border-2 ${
                   activeTab === 'reward'
-                    ? 'bg-cmSelectedTab border-cmSelectedTab text-cmWhitePrimary'
-                    : 'bg-cmUnselectedTab border-cmUnselectedTabBorder text-cmWhitePrimary/80'
+                    ? 'bg-cmSelectedTab border-CmBasicText border-white '
+                    : 'bg-cmUnselectedTab border-CmBasicText/50 border-black '
                 }`}
                 onClick={() => setActiveTab('reward')}
               >
                 <img src={ltRewardIcon} alt="" className="h-4 w-auto" />
-                <span className="font-mplus-rounded text-sm font-bold">報酬確認</span>
+                <span className="">報酬確認</span>
                 {/* 通知バッジ */}
                 <img
                   src={redCircle}
@@ -284,16 +284,19 @@ export const LuneTower = () => {
             </div>
 
             {/* ページネーション */}
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1 font-mplus-rounded font-extrabold text-cmWhitePrimary text-sm text-stroke-brown ">
               {(['1-30', '31-60', '61-100'] as PageRange[]).map((range) => (
                 <button
                   key={range}
-                  className={`px-3 py-1 rounded border text-sm font-mplus-rounded ${
+                  className={`px-3 py-1 rounded border-2 text-shadow-default context-menu ${
                     activePage === range
-                      ? 'bg-cmWhitePrimary text-CmBasicText border-CmBasicText'
-                      : 'bg-transparent text-CmBasicText border-CmBasicText/50'
+                      ? 'bg-cmSelectedTab border-CmBasicText border-white '
+                      : 'bg-cmUnselectedTab border-CmBasicText/50 border-black '
                   }`}
                   onClick={() => setActivePage(range)}
+                  style={{
+                    borderRadius: '12px 4px 12px 4px'  /* 左上緩やか 右上急 右下緩やか 左下急 */
+                  }}
                 >
                   {range.replace('-', '~')}
                 </button>
