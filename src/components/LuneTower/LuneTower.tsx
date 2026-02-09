@@ -198,7 +198,7 @@ export const LuneTower = () => {
           {/* 上段：「ランキング」タイトル + シーズン選択 */}
           <div className="flex items-center justify-between mb-2">
             {/* ランキングタイトル */}
-            <div className="relative flex items-center gap-2 border-2 border-white rounded-sm bg-cmModalBg/50 h-5 ph-3">
+            <div className="relative flex items-center gap-2 border-2 border-white rounded-sm bg-cmModalBg/50 h-5 ph-3 context-menu ">
               <img src={ltRankingYellowMark} alt="" className="h-8 w-auto " />
               <span className="text-cmPurple font-dela-gothic text-2xl text-stroke-white-m text-shadow-default ">
                 ランキング
@@ -215,13 +215,13 @@ export const LuneTower = () => {
 
             {/* シーズン選択プルダウン */}
             <div
-              className="relative flex items-center justify-center min-w-[430px] h-10 bg-cover bg-center bg-no-repeat"
+              className="relative flex items-center justify-end min-w-[400px] h-10 bg-contain bg-center bg-no-repeat "
               style={{ backgroundImage: `url(${ltSeasonBase})` }}
             >
               <select
                 value={activeSeason}
                 onChange={(e) => setActiveSeason(e.target.value as SeasonType)}
-                className="appearance-none bg-transparent text-cmWhitePrimary font-mplus-rounded text-sm text-center cursor-pointer focus:outline-none w-full h-full px-6"
+                className="appearance-none bg-transparent text-cmWhitePrimary font-mplus-rounded font-extrabold text-stroke-purple-sm text-sm text-end gap-3 cursor-pointer focus:outline-none w-full h-full px-7"
               >
                 {(Object.keys(SEASON_DATA) as SeasonType[]).map((season) => (
                   <option key={season} value={season} className="text-CmBasicText bg-white">
@@ -234,7 +234,7 @@ export const LuneTower = () => {
           </div>
 
           {/* 下段：タブ3つ + ページネーション */}
-          <div className="flex items-center justify-between font-mplus-rounded text-sm font-bold text-cmWhitePrimary text-shadow-default ">
+          <div className="flex items-center justify-between font-mplus-rounded text-sm font-bold text-cmWhitePrimary ">
             {/* タブ3つ */}
             <div className="flex items-center gap-2 ">
               {/* 世界ランクタブ */}
@@ -252,7 +252,7 @@ export const LuneTower = () => {
 
               {/* ライバルランクタブ */}
               <button
-                className={`flex items-center gap-1 px-4 py-1 h-6 rounded-xs border-2 context-menu ${
+                className={`flex items-center gap-1 px-4 py-1 h-6 rounded-xs border-2 context-menu text-shadow-default ${
                   activeTab === 'rival'
                     ? 'bg-cmSelectedTab border-CmBasicText border-white '
                     : 'bg-cmUnselectedTab border-CmBasicText/50 border-black '
@@ -265,7 +265,7 @@ export const LuneTower = () => {
 
               {/* 報酬確認タブ */}
               <button
-                className={`relative flex items-center gap-1 px-4 py-1 h-6 rounded-xs border-2 ${
+                className={`relative flex items-center gap-1 px-4 py-1 h-6 rounded-xs border-2 text-shadow-default ${
                   activeTab === 'reward'
                     ? 'bg-cmSelectedTab border-CmBasicText border-white '
                     : 'bg-cmUnselectedTab border-CmBasicText/50 border-black '
