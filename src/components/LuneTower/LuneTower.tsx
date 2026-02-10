@@ -169,8 +169,11 @@ export const LuneTower = () => {
 
         {/* タイトルバナー */}
         <div
-          className="relative h-[80%] px-8 flex items-center justify-center rounded-md bg-contain bg-center bg-no-repeat text-cmWhitePrimary font-dela-gothic text-shadow-title text-xl context-menu-ds"
-          style={{ backgroundImage: `url(${titlebanner})` }}
+          className="relative h-[80%] px-8 flex items-center justify-center rounded-lg bg-contain bg-center bg-no-repeat text-cmWhitePrimary font-dela-gothic text-shadow-title text-xl context-menu-ds"
+          style={{
+            backgroundImage: `url(${titlebanner})`,
+            filter: 'drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.3))'
+          }}
         >
           {/* 戻るボタン */}
           <button
