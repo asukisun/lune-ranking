@@ -164,7 +164,7 @@ export const LuneTower = () => {
     {/* <div className="absolute inset-0 bg-fuchsia-400/30 pointer-events-none" /> */}
     
       {/* ===== ヘッダーエリア（約16%） ===== */}
-      <header className="h-[13%] flex items-center px-4 gap-2">
+      <header className="h-[13%] flex items-center px-2 gap-2">
         {/* 戻るボタン */}
 
         {/* タイトルバナー */}
@@ -185,7 +185,7 @@ export const LuneTower = () => {
 
           {/* ヘルプボタン（右上） 差し替えるタイトルバナー画像に合わせて色を変えてください */}
           <button
-            className="font-mplus-rounded absolute -top-0 -right-1 w-2.5 h-2.5 bg-[#600EED] rounded-xs flex items-center justify-center text-cmWhitePrimary text-[7px] context-menu"
+            className="font-mplus-rounded absolute top-2 right-1 w-2 h-2 bg-[#600EED] rounded-xs flex items-center justify-center text-cmWhitePrimary text-[7px] context-menu"
             // style={{ boxShadow: '2px 2px 0px rgba(0, 0, 0, 0.4)' }}
             onClick={() => console.log('ヘルプボタンクリック')}
           >
