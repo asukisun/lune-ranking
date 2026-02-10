@@ -341,7 +341,7 @@ export const LuneTower = () => {
 
               {/* マイデータパネル（ベージュ部分） */}
               <div
-                className="relative flex-1 flex flex-col bg-cover bg-center bg-no-repeat p-2 w-26 rounded-md border-2 border-white context-menu-bis"
+                className="relative flex-1 flex flex-col bg-cover bg-center bg-no-repeat items-center justify-center p-2 w-26 rounded-md border-2 border-white context-menu-bis"
                 style={{
                   backgroundImage: `url(${ltMydataPanelBase})`
                 }}
