@@ -410,17 +410,17 @@ export const LuneTower = () => {
                 className="flex items-center h-15 min-h-15 bg-cover bg-center bg-no-repeat px-2 gap-2 border-2 border-white context-menu-bis"
                 style={{
                   backgroundImage: `url(${ltRankingUserPanelBase})`,
-                  borderRadius: '12px 4px 12px 4px',  /* 左上緩やか 右上急 右下緩やか 左下急 */
+                  borderRadius: '20px 6px 20px 6px',  /* 左上緩やか 右上急 右下緩やか 左下急 */
                 }}
               >
                 {/* 順位 */}
                 <div
-                  className={`w-5 h-full flex items-center justify-center font-dela-gothic font-bold text-xl text-shadow-lg/30 border-2 border-white -ml-2 -my-2 context-menu  ${
+                  className={`w-5 h-15 flex items-center justify-center font-dela-gothic font-bold text-xl text-shadow-lg/30 border-2 border-white -ml-2.5 overflow-visible context-menu ${
                     getRankStyle(user.rank, RANK_BADGE_STYLES).className
                   }`}
                   style={{
                     ...getRankStyle(user.rank, RANK_BADGE_STYLES).style,
-                    borderRadius: '12px 4px 12px 4px',
+                    borderRadius: '20px 6px 20px 6px',
                     WebkitTextStroke: '1px var(--color-cmWhitePrimary)',
                   }}
                 >
