@@ -338,9 +338,17 @@ a img {
 /* drop shadow */
 .context-menu-ds {
  animation: fadeIn 0.1s ease-out;
- filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.3));
+ filter: drop-shadow(1px 1px 0px rgba(0, 0, 0, 0.3));
  z-index: 9999;
 }
+
+/* box inset shadow */
+.context-menu-bis {
+ animation: fadeIn 0.1s ease-out;
+ box-Shadow: inset 2px 0 0 rgba(0, 0, 0, 0.3), inset 0 2px 0px rgba(0, 0, 0, 0.3), inset 0 -2px 0px rgba(0, 0, 0, 0.3), inset -2px 0px 0px rgba(0, 0, 0, 0.3);
+ z-index: 9999;
+}
+
 
 .context-menu-item {
  transition: background-color 0.1s ease;

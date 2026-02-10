@@ -205,7 +205,7 @@ export const LuneTower = () => {
               </span>
               {/* ヘルプボタン（右上） */}
               <button
-                className="absolute -top-2 -right-3 w-2.5 h-2.5 bg-cmUnselectedTabBorder rounded-xs flex items-center justify-center text-cmWhitePrimary text-xs border border-black"
+                className="absolute -top-2 -right-3 w-2.5 h-2.5 bg-cmUnselectedTabBorder rounded-xs flex items-center justify-center text-cmWhitePrimary text-xs border border-black context-menu"
                 style={{ boxShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)' }}
                 onClick={() => console.log('ランキングヘルプクリック')}
               >
@@ -341,7 +341,7 @@ export const LuneTower = () => {
 
               {/* マイデータパネル（ベージュ部分） */}
               <div
-                className="relative flex-1 flex flex-col bg-cover bg-center bg-no-repeat p-2 w-26 rounded-md border-2 border-white context-menu"
+                className="relative flex-1 flex flex-col bg-cover bg-center bg-no-repeat p-2 w-26 rounded-md border-2 border-white context-menu-bis"
                 style={{
                   backgroundImage: `url(${ltMydataPanelBase})`
                 }}
@@ -370,18 +370,18 @@ export const LuneTower = () => {
                 </div>
 
                 {/* フロア + タイム */}
-                <div className="flex items-center justify-center gap-1">
+                <div className="flex items-center justify-center gap-1 ">
                   {/* フロア */}
-                  <div className="flex items-center gap-1">
+                  <div className="flex items-center gap-1 context-menu-ds">
                     <img src={ltFloorIcon} alt="フロア" className="h-4 w-auto" />
-                    <span className="text-white text-CmWhitePrimary font-mplus-rounded text-lg font-extrabold text-stroke-purple text-shadow-default">
+                    <span className="text-white text-CmWhitePrimary font-mplus-rounded text-lg font-extrabold text-stroke-purple ">
                       999
                     </span>
                   </div>
                   {/* タイム */}
-                  <div className="flex items-center gap-0">
+                  <div className="flex items-center gap-0 context-menu-ds">
                     <img src={ltClockIcon} alt="タイム" className="h-4 w-auto" />
-                    <span className="text-white text-CmBasicText font-mplus-rounded text-lg font-extrabold text-stroke-purple text-shadow-default">
+                    <span className="text-white text-CmBasicText font-mplus-rounded text-lg font-extrabold text-stroke-purple ">
                       5:00
                     </span>
                   </div>
@@ -398,10 +398,10 @@ export const LuneTower = () => {
             {MOCK_RANKING_DATA.map((user) => (
               <div
                 key={user.rank}
-                className="flex items-center h-15 min-h-15 bg-cover bg-center bg-no-repeat px-2 gap-2 border-2 border-white context-menu "
+                className="flex items-center h-15 min-h-15 bg-cover bg-center bg-no-repeat px-2 gap-2 border-2 border-white context-menu-bis"
                 style={{
                   backgroundImage: `url(${ltRankingUserPanelBase})`,
-                  borderRadius: '12px 4px 12px 4px'  /* 左上緩やか 右上急 右下緩やか 左下急 */
+                  borderRadius: '12px 4px 12px 4px',  /* 左上緩やか 右上急 右下緩やか 左下急 */
                 }}
               >
                 {/* 順位 */}
@@ -419,14 +419,14 @@ export const LuneTower = () => {
                 </div>
 
                 {/* プレイヤーアイコン */}
-                <div className="w-6 h-6 bg-white rounded flex items-center justify-center flex-shrink-0 self-start mt-3 context-menu ">
+                <div className="w-6 h-6 bg-white rounded flex items-center justify-center flex-shrink-0 self-start mt-3 context-menu-ds ">
                   <span className="text-xs text-CmBasicText">ICON</span>
                 </div>
 
                 {/* プレイヤー情報 */}
                 <div className="flex flex-col justify-center gap-1">
                   <span
-                    className={`font-mochiy text-base font-bold text-drop-shadow ${
+                    className={`font-mochiy text-base font-bold context-menu-ds ${
                       getRankStyle(user.rank, RANK_NAME_STYLES).className
                     }`}
                     style={getRankStyle(user.rank, RANK_NAME_STYLES).style}
@@ -436,7 +436,7 @@ export const LuneTower = () => {
                   <div className="flex items-center gap-1">
                     {/* フロア */}
                     <div className="flex items-center gap-1">
-                      <img src={ltFloorIcon} alt="フロア" className="h-4 w-auto " />
+                      <img src={ltFloorIcon} alt="フロア" className="h-4 w-auto context-menu-ds" />
                       <span className="text-white text-[15px] font-mplus-rounded font-extrabold text-xs text-stroke-purple text-shadow-default">
                         {user.floor}
                       </span>
