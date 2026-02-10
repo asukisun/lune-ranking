@@ -169,12 +169,12 @@ export const LuneTower = () => {
 
         {/* タイトルバナー */}
         <div
-          className="relative h-[80%] px-8 flex items-center justify-center bg-contain bg-center bg-no-repeat text-cmWhitePrimary font-dela-gothic text-shadow-title text-xl context-menu-ds"
+          className="relative h-[80%] px-8 flex items-center justify-center rounded-md bg-contain bg-center bg-no-repeat text-cmWhitePrimary font-dela-gothic text-shadow-title text-xl context-menu-ds"
           style={{ backgroundImage: `url(${titlebanner})` }}
         >
           {/* 戻るボタン */}
           <button
-            className="h-[60%] aspect-square flex items-center justify-center context-menu "
+            className="h-[60%] aspect-square flex items-center justify-center context-menu-ds "
             onClick={() => console.log('戻るボタンクリック')}
           >
             <img src={backArrow} alt="戻る" className="h-full w-full object-contain  relative -ml-10" />
@@ -196,7 +196,7 @@ export const LuneTower = () => {
 
       {/* ===== ランキングエリア全体（約84%）- lt-ranking-base.png背景 ===== */}
       <main
-        className="flex-1 flex flex-col mx-2 mb-2 rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat rounded-md "
+        className="flex-1 flex flex-col mx-2 mb-2 rounded-lg overflow-hidden bg-[length:100%_100%] bg-center bg-no-repeat rounded-md p-1"
         style={{ backgroundImage: `url(${ltRankingBase})` }}
       >
         {/* --- 上部：「ランキング」タイトル + タブ + シーズン + ページネーション --- */}
@@ -314,7 +314,7 @@ export const LuneTower = () => {
         </div>
 
         {/* --- コンテンツエリア：左右2カラム構成 --- */}
-        <div className="flex-1 flex overflow-hidden p-2 bg-cmModalBg/50 rounded-md border-2 border-white">
+        <div className="flex-1 flex overflow-hidden p-2 bg-cmModalBg/50 rounded-3xl border-2 border-white">
 
           {/* ========== 左カラム：世界ランク + マイデータ ========== */}
           <div className="w-[16%] flex flex-col items-center justify-center pr-0 gap-1">
