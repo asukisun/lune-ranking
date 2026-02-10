@@ -329,6 +329,11 @@ a img {
  }
 }
 
+/* 凸効果（浮き出しボタン） */
+.white-edge-glow {
+  box-shadow: 
+    inset 0 0 2px 2px rgba(255, 255, 255, 0.2);
+}
 
 .context-menu {
  animation: fadeIn 0.1s ease-out;

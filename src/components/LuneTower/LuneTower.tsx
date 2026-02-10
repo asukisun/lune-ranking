@@ -154,7 +154,7 @@ export const LuneTower = () => {
   const [activeSeason, setActiveSeason] = useState<SeasonType>('season1')
   return (
     <div
-      className="relative w-full h-full bg-cover bg-center bg-no-repeat flex flex-col"
+      className="relative w-full h-full bg-cover bg-center bg-no-repeat flex flex-col white-edge-glow"
       style={{
         backgroundImage: `url(${ltBg})`,
         // filter: 'brightness(1.2) saturate(0.8)'
