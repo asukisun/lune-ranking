@@ -190,7 +190,7 @@ export const LuneTower = () => {
 
       {/* ===== ランキングエリア全体（約84%）- lt-ranking-base.png背景 ===== */}
       <main
-        className="flex-1 flex flex-col mx-2 mb-2 rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat rounded-md"
+        className="flex-1 flex flex-col mx-2 mb-2 rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat rounded-md "
         style={{ backgroundImage: `url(${ltRankingBase})` }}
       >
         {/* --- 上部：「ランキング」タイトル + タブ + シーズン + ページネーション --- */}
@@ -199,7 +199,7 @@ export const LuneTower = () => {
           <div className="flex justify-between">
             {/* ランキングタイトル */}
             <div className="relative flex justify-between items-end mt-2 gap-2 border-2 border-white rounded-sm bg-cmModalBg/50 h-4 context-menu ">
-              <img src={ltRankingYellowMark} alt="" className="h-7 w-auto flex justify-between items-end mt-2 " />
+              <img src={ltRankingYellowMark} alt="" className="h-7 w-auto flex justify-between items-end mt-2 context-menu-ds" />
               <span className="text-cmPurple font-dela-gothic text-2xl text-stroke-white-m text-shadow-default ">
                 ランキング
               </span>
@@ -215,7 +215,7 @@ export const LuneTower = () => {
 
             {/* シーズン選択プルダウン */}
             <div
-              className="relative flex items-center justify-end min-w-[350px] h-8 bg-contain bg-right bg-center bg-no-repeat px-2 "
+              className="relative flex items-center justify-end min-w-[350px] h-8 bg-contain bg-right bg-center bg-no-repeat px-2 context-menu-ds "
               style={{ backgroundImage: `url(${ltSeasonBase})` }}
             >
               <select
@@ -443,7 +443,7 @@ export const LuneTower = () => {
                     </div>
                     {/* タイム */}
                     <div className="flex items-center gap-1">
-                      <img src={ltClockIcon} alt="タイム" className="h-4 w-auto" />
+                      <img src={ltClockIcon} alt="タイム" className="h-4 w-auto context-menu-ds" />
                       <span className="text-white text-[15px] font-mplus-rounded font-extrabold text-xs text-stroke-purple text-shadow-default">
                         {user.time}
                       </span>

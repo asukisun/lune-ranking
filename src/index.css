@@ -332,10 +332,15 @@ a img {
 
 .context-menu {
  animation: fadeIn 0.1s ease-out;
- box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+ box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
  z-index: 9999;
 }
-
+/* drop shadow */
+.context-menu-ds {
+ animation: fadeIn 0.1s ease-out;
+ filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.3));
+ z-index: 9999;
+}
 
 .context-menu-item {
  transition: background-color 0.1s ease;
