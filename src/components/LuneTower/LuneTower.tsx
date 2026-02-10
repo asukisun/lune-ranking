@@ -155,15 +155,21 @@ export const LuneTower = () => {
   return (
     <div
       className="relative w-full h-full bg-cover bg-center bg-no-repeat flex flex-col"
-      style={{ backgroundImage: `url(${ltBg})` }}
+      style={{
+        backgroundImage: `url(${ltBg})`,
+        // filter: 'brightness(1.2) saturate(0.8)'
+      }}
     >
+    {/* 背景に 白いオーバーレイ（淡くするフィルター） */}
+    {/* <div className="absolute inset-0 bg-fuchsia-400/30 pointer-events-none" /> */}
+    
       {/* ===== ヘッダーエリア（約16%） ===== */}
       <header className="h-[13%] flex items-center px-4 gap-2">
         {/* 戻るボタン */}
 
         {/* タイトルバナー */}
         <div
-          className="relative h-[80%] px-8 flex items-center justify-center bg-contain bg-center bg-no-repeat text-cmWhitePrimary font-dela-gothic text-shadow-title text-xl context-menu"
+          className="relative h-[80%] px-8 flex items-center justify-center bg-contain bg-center bg-no-repeat text-cmWhitePrimary font-dela-gothic text-shadow-title text-xl context-menu-ds"
           style={{ backgroundImage: `url(${titlebanner})` }}
         >
           {/* 戻るボタン */}
@@ -179,7 +185,7 @@ export const LuneTower = () => {
 
           {/* ヘルプボタン（右上） 差し替えるタイトルバナー画像に合わせて色を変えてください */}
           <button
-            className="font-mplus-rounded absolute -top-0 -right-1 w-2.5 h-2.5 bg-[#2a2a5a] rounded-xs flex items-center justify-center text-cmWhitePrimary text-[7px] context-menu"
+            className="font-mplus-rounded absolute -top-0 -right-1 w-2.5 h-2.5 bg-[#600EED] rounded-xs flex items-center justify-center text-cmWhitePrimary text-[7px] context-menu"
             // style={{ boxShadow: '2px 2px 0px rgba(0, 0, 0, 0.4)' }}
             onClick={() => console.log('ヘルプボタンクリック')}
           >
@@ -205,7 +211,7 @@ export const LuneTower = () => {
               </span>
               {/* ヘルプボタン（右上） */}
               <button
-                className="absolute -top-2 -right-3 w-2.5 h-2.5 bg-cmUnselectedTabBorder rounded-xs flex items-center justify-center text-cmWhitePrimary text-[7px] context-menu"
+                className="absolute -top-2 -right-3 w-2 h-2 bg-cmUnselectedTabBorder rounded-xs flex items-center justify-center text-cmWhitePrimary text-[7px] context-menu"
                 onClick={() => console.log('ランキングヘルプクリック')}
               >
                 ?
@@ -351,7 +357,7 @@ export const LuneTower = () => {
               >
                 {/* 注釈ボタン（右上） */}
                 <button
-                  className="absolute top-1 right-1 w-2 h-2 bg-cmUnselectedTab rounded-xs flex items-center justify-center text-cmWhitePrimary text-[8px] context-menu"
+                  className="absolute top-2 right-2 w-2 h-2 bg-cmUnselectedTab rounded-xs flex items-center justify-center text-cmWhitePrimary text-[8px] context-menu"
                   // style={{ boxShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)' }}
                   onClick={() => console.log('マイデータ注釈クリック')}
                 >
