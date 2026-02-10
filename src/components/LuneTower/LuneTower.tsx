@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import ltBg from '../../assets/lt-bg.png'
+import ltBg from '../../assets/lt-bg-2.png'
 import ltRankingBase from '../../assets/lt-ranking-base.png'
 import titlebanner from '../../assets/title-base_genarated.png'
 import backArrow from '../../assets/back-arrow.png'
