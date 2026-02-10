@@ -174,13 +174,13 @@ export const LuneTower = () => {
             <img src={backArrow} alt="戻る" className="h-full w-full object-contain  relative -ml-10" />
           </button>
 
-          {/* タイトルテキスト */}
+          {/* タイトルテキスト  後ほど適切なタイトルバナー画像素材に差し替えてください。*/}
           ルーンの塔
 
-          {/* ヘルプボタン（右上） */}
+          {/* ヘルプボタン（右上） 差し替えるタイトルバナー画像に合わせて色を変えてください */}
           <button
-            className="absolute -top-0 -right-1 w-4 h-4 bg-[#2a2a5a] rounded-md flex items-center justify-center text-cmWhitePrimary text-xs "
-            style={{ boxShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)' }}
+            className="font-mplus-rounded absolute -top-0 -right-1 w-2.5 h-2.5 bg-[#2a2a5a] rounded-xs flex items-center justify-center text-cmWhitePrimary text-[7px] context-menu"
+            // style={{ boxShadow: '2px 2px 0px rgba(0, 0, 0, 0.4)' }}
             onClick={() => console.log('ヘルプボタンクリック')}
           >
             ?
@@ -205,8 +205,7 @@ export const LuneTower = () => {
               </span>
               {/* ヘルプボタン（右上） */}
               <button
-                className="absolute -top-2 -right-3 w-2.5 h-2.5 bg-cmUnselectedTabBorder rounded-xs flex items-center justify-center text-cmWhitePrimary text-xs border border-black context-menu"
-                style={{ boxShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)' }}
+                className="absolute -top-2 -right-3 w-2.5 h-2.5 bg-cmUnselectedTabBorder rounded-xs flex items-center justify-center text-cmWhitePrimary text-[7px] context-menu"
                 onClick={() => console.log('ランキングヘルプクリック')}
               >
                 ?
@@ -216,7 +215,10 @@ export const LuneTower = () => {
             {/* シーズン選択プルダウン */}
             <div
               className="relative flex items-center justify-end min-w-[350px] h-8 bg-contain bg-right bg-center bg-no-repeat px-2 context-menu-ds "
-              style={{ backgroundImage: `url(${ltSeasonBase})` }}
+              style={{ 
+                backgroundImage: `url(${ltSeasonBase})`,
+                filter: 'drop-shadow(3px 3px 0px rgba(0, 0, 0, 0.3))'
+              }}
             >
               <select
                 value={activeSeason}
@@ -246,7 +248,7 @@ export const LuneTower = () => {
                 }`}
                 onClick={() => setActiveTab('world')}
               >
-                <img src={ltWorldRankIcon} alt="" className="h-4 w-auto" />
+                <img src={ltWorldRankIcon} alt="" className="h-4 w-auto context-menu-ds" />
                 <span className="">世界ランク</span>
               </button>
 
@@ -259,7 +261,7 @@ export const LuneTower = () => {
                 }`}
                 onClick={() => setActiveTab('rival')}
               >
-                <img src={ltRivalRankIcon} alt="" className="h-4 w-auto" />
+                <img src={ltRivalRankIcon} alt="" className="h-4 w-auto context-menu-ds" />
                 <span className="">ライバルランク</span>
               </button>
 
@@ -272,7 +274,7 @@ export const LuneTower = () => {
                 }`}
                 onClick={() => setActiveTab('reward')}
               >
-                <img src={ltRewardIcon} alt="" className="h-4 w-auto" />
+                <img src={ltRewardIcon} alt="" className="h-4 w-auto context-menu-ds" />
                 <span className="">報酬確認</span>
                 {/* 通知バッジ */}
                 <img
@@ -313,13 +315,14 @@ export const LuneTower = () => {
 
             {/* --- 世界ランクタイトル --- */}
             <div
-              className="relative w-full h-[25%] flex items-center justify-center bg-contain bg-center bg-no-repeat"
+              className="relative w-full h-[25%] flex items-center justify-center bg-contain bg-center bg-no-repeat context-menu-ds"
               style={{ backgroundImage: `url(${ltRankingTitleDecoration})` }}
             >
               <span
                 className="text-cmWhitePrimary font-mplus-rounded text-xl text-shadow-title font-extrabold text-stroke-brown "
                 style={{
-                  WebkitTextStroke: '1.5px var(--color-cmUnselectedTab)'
+                  // WebkitTextStroke: '0.5px',
+                  webkitTextStrokeWidth: '1.5px'
                 }}
               >
                 世界ランク
@@ -348,7 +351,7 @@ export const LuneTower = () => {
               >
                 {/* 注釈ボタン（右上） */}
                 <button
-                  className="absolute top-1 right-1 w-3 h-3 bg-cmUnselectedTab rounded-xs flex items-center justify-center text-cmWhitePrimary text-xs context-menu"
+                  className="absolute top-1 right-1 w-2 h-2 bg-cmUnselectedTab rounded-xs flex items-center justify-center text-cmWhitePrimary text-[8px] context-menu"
                   // style={{ boxShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)' }}
                   onClick={() => console.log('マイデータ注釈クリック')}
                 >
