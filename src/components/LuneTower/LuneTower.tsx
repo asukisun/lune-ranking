@@ -292,11 +292,11 @@ export const LuneTower = () => {
             </div>
 
             {/* ページネーション */}
-            <div className="flex items-center gap-1 font-mplus-rounded font-extrabold text-cmWhitePrimary text-sm text-stroke-brown ">
+            <div className="flex items-center justify-center gap-1 font-mplus-rounded font-extrabold text-cmWhitePrimary text-sm text-stroke-brown ">
               {(['1-30', '31-60', '61-100'] as PageRange[]).map((range) => (
                 <button
                   key={range}
-                  className={`px-3 py-1 h-6 rounded border-2 text-shadow-default context-menu ${
+                  className={`flex items-center justify-center px-3 py-1 h-6 rounded border-2 text-shadow-default context-menu ${
                     activePage === range
                       ? 'bg-cmSelectedTab border-CmBasicText border-white '
                       : 'bg-cmUnselectedTab border-CmBasicText/50 border-black '
@@ -314,7 +314,7 @@ export const LuneTower = () => {
         </div>
 
         {/* --- コンテンツエリア：左右2カラム構成 --- */}
-        <div className="flex-1 flex overflow-hidden p-2 bg-cmModalBg/50 rounded-3xl border-2 border-white">
+        <div className="flex-1 flex overflow-hidden p-2 bg-cmModalBg/50 rounded-3xl border-2 border-white context-menu">
 
           {/* ========== 左カラム：世界ランク + マイデータ ========== */}
           <div className="w-[16%] flex flex-col items-center justify-center pr-0 gap-1">
