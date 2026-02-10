@@ -346,7 +346,7 @@ export const LuneTower = () => {
                 className="h-8 w-24 flex items-center justify-center bg-contain bg-center bg-no-repeat rounded-md context-menu"
                 style={{ backgroundImage: `url(${ltMydataTitleBg})` }}
               >
-                <span className="text-cmWhitePrimary text-lg font-mplus-rounded font-extrabold text-stroke-brown ">
+                <span className="text-cmWhitePrimary text-sm font-mplus-rounded font-extrabold text-stroke-brown ">
                   マイデータ
                 </span>
               </div>
