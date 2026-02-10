@@ -328,7 +328,7 @@ export const LuneTower = () => {
               style={{ backgroundImage: `url(${ltRankingTitleDecoration})` }}
             >
               <span
-                className="text-cmWhitePrimary font-mplus-rounded text-xl text-shadow-title font-extrabold text-stroke-brown "
+                className="text-cmWhitePrimary font-mplus-rounded text-3xl text-shadow-title font-extrabold text-stroke-brown "
                 style={{
                   // WebkitTextStroke: '0.5px',
                   webkitTextStrokeWidth: '1.5px'
@@ -343,17 +343,17 @@ export const LuneTower = () => {
 
               {/* マイデータタイトル */}
               <div
-                className="h-8 w-26 flex items-center justify-center bg-contain bg-center bg-no-repeat rounded-md context-menu"
+                className="h-8 w-24 flex items-center justify-center bg-contain bg-center bg-no-repeat rounded-md context-menu"
                 style={{ backgroundImage: `url(${ltMydataTitleBg})` }}
               >
-                <span className="text-cmWhitePrimary text-[13px] font-mplus-rounded font-extrabold text-stroke-brown ">
+                <span className="text-cmWhitePrimary text-lg font-mplus-rounded font-extrabold text-stroke-brown ">
                   マイデータ
                 </span>
               </div>
 
               {/* マイデータパネル（ベージュ部分） */}
               <div
-                className="relative flex-1 flex flex-col bg-cover bg-center bg-no-repeat items-center justify-center p-2 w-26 rounded-md border-2 border-white context-menu-bis"
+                className="relative flex-1 flex flex-col bg-cover bg-center bg-no-repeat items-center justify-center p-2 w-24 rounded-md border-2 border-white context-menu-bis"
                 style={{
                   backgroundImage: `url(${ltMydataPanelBase})`
                 }}
@@ -391,7 +391,7 @@ export const LuneTower = () => {
                     </span>
                   </div>
                   {/* タイム */}
-                  <div className="flex items-center gap-0 context-menu-ds">
+                  <div className="flex items-center gap-0.5 context-menu-ds">
                     <img src={ltClockIcon} alt="タイム" className="h-4 w-auto" />
                     <span className="text-white text-CmBasicText font-mplus-rounded text-lg font-extrabold text-stroke-purple ">
                       5:00

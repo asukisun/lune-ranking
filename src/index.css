@@ -555,7 +555,7 @@ body {
 }
 
 
-/* Firefox iOS Android アプリでは不要とする */
+/* Firefox iOS Android アプリでは不要とする。あると制御できないケースあり */
 /* .mq-story-scrollbar {
  scrollbar-width: auto;
  scrollbar-color: #f5f0ea #2a1f18;
