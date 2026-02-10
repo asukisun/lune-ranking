@@ -158,17 +158,17 @@ export const LuneTower = () => {
       style={{ backgroundImage: `url(${ltBg})` }}
     >
       {/* ===== ヘッダーエリア（約16%） ===== */}
-      <header className="h-[16%] flex items-center px-4 gap-2">
+      <header className="h-[13%] flex items-center px-4 gap-2">
         {/* 戻るボタン */}
 
         {/* タイトルバナー */}
         <div
-          className="relative h-[80%] px-8 flex items-center justify-center bg-contain bg-center bg-no-repeat text-cmWhitePrimary font-dela-gothic text-shadow-title text-xl"
+          className="relative h-[80%] px-8 flex items-center justify-center bg-contain bg-center bg-no-repeat text-cmWhitePrimary font-dela-gothic text-shadow-title text-xl context-menu"
           style={{ backgroundImage: `url(${titlebanner})` }}
         >
           {/* 戻るボタン */}
           <button
-            className="h-[60%] aspect-square flex items-center justify-center "
+            className="h-[60%] aspect-square flex items-center justify-center context-menu "
             onClick={() => console.log('戻るボタンクリック')}
           >
             <img src={backArrow} alt="戻る" className="h-full w-full object-contain  relative -ml-10" />
@@ -194,12 +194,12 @@ export const LuneTower = () => {
         style={{ backgroundImage: `url(${ltRankingBase})` }}
       >
         {/* --- 上部：「ランキング」タイトル + タブ + シーズン + ページネーション --- */}
-        <div className="h-[26%] flex flex-col px-4 py-2">
+        <div className="h-[20%] flex flex-col px-2 py-2">
           {/* 上段：「ランキング」タイトル + シーズン選択 */}
-          <div className="flex items-center justify-between mb-2">
+          <div className="flex justify-between">
             {/* ランキングタイトル */}
-            <div className="relative flex items-center gap-2 border-2 border-white rounded-sm bg-cmModalBg/50 h-5 ph-3 context-menu ">
-              <img src={ltRankingYellowMark} alt="" className="h-8 w-auto " />
+            <div className="relative flex justify-between items-end mt-2 gap-2 border-2 border-white rounded-sm bg-cmModalBg/50 h-4 context-menu ">
+              <img src={ltRankingYellowMark} alt="" className="h-7 w-auto flex justify-between items-end mt-2 " />
               <span className="text-cmPurple font-dela-gothic text-2xl text-stroke-white-m text-shadow-default ">
                 ランキング
               </span>
@@ -215,13 +215,13 @@ export const LuneTower = () => {
 
             {/* シーズン選択プルダウン */}
             <div
-              className="relative flex items-center justify-end min-w-[400px] h-10 bg-contain bg-center bg-no-repeat "
+              className="relative flex items-center justify-end min-w-[350px] h-8 bg-contain bg-right bg-center bg-no-repeat px-2 "
               style={{ backgroundImage: `url(${ltSeasonBase})` }}
             >
               <select
                 value={activeSeason}
                 onChange={(e) => setActiveSeason(e.target.value as SeasonType)}
-                className="appearance-none bg-transparent text-cmWhitePrimary font-mplus-rounded font-extrabold text-stroke-purple-sm text-sm text-end gap-3 cursor-pointer focus:outline-none w-full h-full px-7"
+                className="appearance-none bg-transparent text-cmWhitePrimary font-mplus-rounded font-extrabold text-stroke-purple-sm text-xs text-end gap-3 cursor-pointer focus:outline-none w-full h-full px-2.5"
               >
                 {(Object.keys(SEASON_DATA) as SeasonType[]).map((season) => (
                   <option key={season} value={season} className="text-CmBasicText bg-white">
@@ -229,7 +229,7 @@ export const LuneTower = () => {
                   </option>
                 ))}
               </select>
-              <span className="absolute right-4 text-cmWhitePrimary text-xs pointer-events-none">▼</span>
+              <span className="absolute right-2 text-cmWhitePrimary text-xs pointer-events-none">▼</span>
             </div>
           </div>
 
@@ -265,7 +265,7 @@ export const LuneTower = () => {
 
               {/* 報酬確認タブ */}
               <button
-                className={`relative flex items-center gap-1 px-4 py-1 h-6 rounded-xs border-2 text-shadow-default ${
+                className={`relative flex items-center gap-1 px-4 py-1 h-6 rounded-xs border-2  context-menu text-shadow-default ${
                   activeTab === 'reward'
                     ? 'bg-cmSelectedTab border-CmBasicText border-white '
                     : 'bg-cmUnselectedTab border-CmBasicText/50 border-black '
