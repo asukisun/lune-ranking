@@ -170,7 +170,7 @@ export const CharacterIcon = ({
             alt="★"
             className="w-3 h-3 object-contain "
             style={{
-              marginLeft: idx === 0 ? 0 : -10, // 2個目以降は重ねる（より密に）
+              marginLeft: idx === 0 ? 0 : -7, // レア星 2個目以降 重ね具合の調整
               transform: 'rotate(15deg)',
               filter: 'drop-shadow(0.2vh 0.2vh 0.2vh rgba(0, 0, 0, 0.5))',
             }}
@@ -179,9 +179,9 @@ export const CharacterIcon = ({
       </div>
 
       {/* レベル表示（下部右寄せ） */}
-      {/* <span className="absolute bottom-0 right-0 text-[10px] text-orange-400 z-20 text-stroke [-webkit-text-stroke:1px_white] text-shadow-default"> */}
-      <span className="absolute bottom-0 right-0 text-[2.5vh] font-mplus-rounded font-bold text-stroke-white text-orange-400 z-20 text-shadow-default">
-        Lv.{level}
+      <span className="absolute -bottom-1 right-0 font-mplus-rounded font-bold text-stroke-white text-orange-400 z-20 text-shadow-default">
+        <span className="text-[1.8vh]">Lv.</span>
+        <span className="text-[2.8vh]">{level}</span>
       </span>
     </div>
   )
