@@ -1,15 +1,22 @@
-# 工夫した点と検知した問題点
+# 動作環境
+- nodejs v25.4.0
+- npm 11.8.0
 
 ## 0、セットアップ手順
+- リポジトリのクローン
+~~~sh
+git clone https://github.com/asukisun/lune-ranking.git
+cd lune-ranking
+~~~
 
-- nodejs 最新更新
-- React環境構築 vite インストール
-- tailwindcss インストール
-- git init
-- src ファイルへ DLした画像の格納
-- configファイル適用
-- 後述する Phase 0 の構築. npm run dev で検証できる環境
-( Phase 0: 環境整備（フォント移動、CSS修正、App.tsx白紙化）   )
+- 依存パッケージのインストール
+~~~sh
+npm install
+~~~
+- 実行
+~~~sh
+npm run dev
+~~~
 
 ## 1、検知した問題点
 
