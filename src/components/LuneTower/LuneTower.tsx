@@ -330,8 +330,7 @@ export const LuneTower = () => {
               <span
                 className="text-cmWhitePrimary font-mplus-rounded text-3xl text-shadow-title font-extrabold text-stroke-brown "
                 style={{
-                  // WebkitTextStroke: '0.5px',
-                  webkitTextStrokeWidth: '1.5px'
+                  WebkitTextStrokeWidth: '1.5px'
                 }}
               >
                 世界ランク
