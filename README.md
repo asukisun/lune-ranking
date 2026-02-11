@@ -39,33 +39,32 @@ lt-bg-2.png
 ![85ad9c0d6c8c34b13fe9be4517321fee.png](./85ad9c0d6c8c34b13fe9be4517321fee.png)
 
 2-2, 画像素材に対するShadow   
-下記 定義だと、透過領域画像に適用した場合、Shadow のつきかたが、透過領域についてしまう。  
+下記 定義だと、透過領域画像に適用した場合、Shadow のつきかたが、透過領域についてしまう。
+~~~css  
 .context-menu {  
 animation: fadeIn 0.1s ease-out;  
 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);  
 z-index: 9999;  
 }
-
+~~~
 これに対して 以下を定義し、透過画像の非透過領域に対して影がつくようになった  
+~~~css
 /\* drop shadow \*/  
 .context-menu-ds {  
 animation: fadeIn 0.1s ease-out;  
 filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.3));  
 z-index: 9999;  
 }
+~~~
 
 2-3, 以下行は、あるとスクロールバーのカスタマイズが効かなかったため iOS Android向けスマホゲーム仕様という理解でコメントアウトしてスクロールバーのカスタマイズを行いました。
-
+~~~css
 /\* Firefox \*/
-
 /\* .mq-story-scrollbar {
-
 scrollbar-width: auto;
-
 scrollbar-color: #f5f0ea #2a1f18;
-
 } \*/
-
+~~~
   
   
 
@@ -129,6 +128,3 @@ Phase 6: 微調整・仕上げ（text-shadow、フォント、レスポンシブ
 
 * * *
 
-&nbsp;
-
-ーーー
