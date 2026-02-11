@@ -209,7 +209,7 @@ export const LuneTower = () => {
             {/* ランキングタイトル */}
             <div className="relative flex justify-between items-end mt-2 gap-2 border-2 border-white rounded-sm bg-cmModalBg/50 h-4 context-menu ">
               <img src={ltRankingYellowMark} alt="" className="h-7 w-auto flex justify-between items-end mt-2 context-menu-ds" />
-              <span className="text-cmPurple font-dela-gothic text-2xl text-stroke-white-m text-shadow-default ">
+              <span className="text-grad-lanking-purple font-dela-gothic text-2xl text-stroke-white-m text-shadow-default ">
                 ランキング
               </span>
               {/* ヘルプボタン（右上） */}

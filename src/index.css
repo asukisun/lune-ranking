@@ -699,6 +699,12 @@ body {
    #EF4444 0%,
    #991B1B 100%
  );
+ --gradient-lanking-purple: linear-gradient(
+   90deg,
+   #9443EC 0%,
+   #8433AC 50%,
+   #472598 100%
+ );
 
 }
 
@@ -737,6 +743,14 @@ body {
   background-clip: text;
   color: transparent;
 }
+
+.text-grad-lanking-purple {
+  background: var(--gradient-lanking-purple);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 
 
 
